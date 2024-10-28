@@ -1,0 +1,28 @@
+{
+  "name": "la_pizz",
+  "version": "1.0.0",
+  "description": "Site vitrine pour la pizzeria La Pizz'",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "pizzeria",
+    "vitrine",
+    "restaurant",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Mustapha",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

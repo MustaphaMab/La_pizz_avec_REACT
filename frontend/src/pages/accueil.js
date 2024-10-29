@@ -3,7 +3,9 @@ import React from 'react';
 function accueil() {
     return (
         <div>
-            <h1>Vienvenue à tous </h1>
+            <h1>LA PIZZ'</h1>
         </div>
-    )
+    );
 }
+
+export default accueil;

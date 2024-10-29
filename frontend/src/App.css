@@ -38,4 +38,31 @@ footer {
   color: white;
 }
 
+/* page menu */
+
+.pizza-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pizza-item {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+}
+
+.pizza-item h2 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.pizza-item p {
+  margin: 0.2em 0;
+}
+
+
 

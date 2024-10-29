@@ -1,6 +1,6 @@
 import React from 'react';
 import button from '../components/button';
-import { Button } from 'bootstrap';
+
 
 
 function accueil() {

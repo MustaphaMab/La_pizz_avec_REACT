@@ -6,7 +6,7 @@ import Menu from './pages/menu';
 import Contact from './pages/contact';
 import Footer from './pages/footer';
 
-import './App.css';
+// import './App.css';
 
 
 

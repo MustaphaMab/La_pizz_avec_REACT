@@ -6,39 +6,169 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: rgb(252, 177, 27);
-  padding: 10px;
+/* NAVBAR */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: flex;
+  justify-content: center; /* Centre le contenu de l’en-tête */
 }
 
-header nav ul {
+.nav-container {
   display: flex;
+  align-items: center; /* Centre verticalement */
+  gap: 20px; /* Espacement entre le logo et les liens */
+}
+
+.header-logo {
+  width: 50px;
+  height: auto;
+  border-radius: 100%;
+}
+
+.nav-links {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
 }
 
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li a {
-  color: white;
+.nav-links li a {
   text-decoration: none;
+  color: white;
   font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.nav-links li a:hover {
+  background-color: #f27222;
+  color: white;
+}
+
+/* Style pour le bouton burger */
+.burger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+  gap: 5px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.burger-icon .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation de transformation en "X" pour le burger */
+.burger-icon.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-icon.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-icon.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Style pour le menu responsive */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links.open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f27222;
+}
+
+
+
+/* Main*/ 
 
 main {
   padding: 20px;
+  margin-top: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background-color: rgb(252, 177, 27);
+
+/* Bannière en parallax */
+.banner {
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   color: white;
+  text-align: center;
+  padding: 100px 20px;
+  margin-top: 14%;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* page menu */
+.banner:hover {
+  opacity: 1;
+}
+
+.banner h1, .banner p {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* page Menu */
 
 .pizza-list {
   display: flex;
@@ -64,5 +194,49 @@ footer {
   margin: 0.2em 0;
 }
 
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: rgb(252, 177, 27);
+  color: white;
+}
+
+
+
+/* images accueil */
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.logo_pizza {
+  width: 10%;
+}
+
+/* Media query pour petits écrans */
+@media (max-width: 768px) {
+  .burger-icon {
+      display: flex;
+  }
+  .nav-links {
+      display: none;
+  }
+  .nav-links.open {
+      display: flex;
+  }
+
+
+}
 
 

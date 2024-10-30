@@ -9,6 +9,7 @@ import Footer from './pages/footer';
 import './App.css';
 
 
+
 function App() {
     return (
         <Router>
@@ -17,7 +18,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Accueil />} />
                     <Route path="/menu" element={<Menu />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/Contact" element={<Contact />} />
                 </Routes>
             </main>
             <Footer />

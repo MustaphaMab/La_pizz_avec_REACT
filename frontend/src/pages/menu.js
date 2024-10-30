@@ -1,26 +1,30 @@
-import React from "react";
-
-const pizzas = [
-  { id: 1, name: "Saumon", description: "crème, saumon", price: "10" },
-  { id: 2, name: "Anchois", description: "tomate, anchois", price: "7" },
-  { id: 3, name: "Fromage", description: "tomate, fromage", price: "6" },
-];
+import React, { useEffect, useState } from 'react';
 
 function Menu() {
-  return (
-    <div>
-      <h1>Menu</h1>
-      <div className="pizza-list">
-        {pizzas.map((pizza) => (
-          <div key={pizza.id} className="pizza-item">
-            <h2>{pizza.name}</h2>
-            <p>{pizza.description}</p>
-            <p>Prix : {pizza.price} €</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    const [pizzas, setPizzas] = useState([]);
+
+    useEffect(() => {
+        // Faites une requête GET à l'API de pizzas
+        fetch('http://localhost:5000/api/pizzas') // Assurez-vous que l'URL correspond
+            .then(response => response.json())
+            .then(data => setPizzas(data))
+            .catch(error => console.error("Erreur lors de la récupération des pizzas:", error));
+    }, []);
+
+    return (
+        <div>
+            <h1>PIZZA</h1>
+            <div className="pizza-list">
+                {pizzas.map((pizza) => (
+                    <div key={pizza.id} className="pizza-item">
+                        <h2>{pizza.name}</h2>
+                        <p>{pizza.description}</p>
+                        <p>Prix : {pizza.price} €</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default Menu;

@@ -8,7 +8,7 @@ function Menu() {
 
     useEffect(() => {
         // Faites une requête GET à l'API de pizzas
-        fetch('http://localhost:5000/api/pizzas') // Assurez-vous que l'URL correspond
+        fetch(`${process.env.REACT_APP_API_URL}/api/pizzas`) // Assurez-vous que l'URL correspond
             .then(response => response.json())
             .then(data => setPizzas(data))
             .catch(error => console.error("Erreur lors de la récupération des pizzas:", error));

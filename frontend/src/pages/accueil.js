@@ -8,14 +8,18 @@ function Accueil() {
     <div className="accueil">
       {/* Bannière Parallaxe */}
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }} >
-        <h1>La Pizz'</h1>
-        <p>Découvrez nos pizzas artisanales, préparées avec passion</p>
+      </section>
+
+      <section>
+      <h1>La Pizz'</h1>
+      <p>Découvrez nos pizzas artisanales, préparées avec passion</p>
       </section>
 
       {/* Section À Propos */}
       <section className="about">
         <h2>À Propos de Nous</h2>
-        <p>Chez La Pizz', nous mettons l'accent sur la qualité et l'authenticité de nos pizzas. Nos ingrédients sont soigneusement sélectionnés pour vous offrir la meilleure expérience culinaire.</p>
+        <p>Chez La Pizz', nous mettons l'accent sur la qualité et l'authenticité de nos pizzas. </p>
+      <p>Nos ingrédients sont soigneusement sélectionnés pour vous offrir la meilleure expérience culinaire.</p>
       </section>
 
       {/* Section Pizzas Vedettes */}
@@ -40,7 +44,11 @@ function Accueil() {
       <section className="contact-section">
         <h2>Nous Contacter</h2>
         <p>Vous avez une question ? Contactez-nous pour toute information supplémentaire !</p>
-        <a href="/contact" className="contact-button">Contactez-nous</a>
+        <p className="contact-info">
+                Téléphone : 04 42 59 65 98
+                <br />
+                Adresse : 123 Rue du Bon Goût, Vitrolles, France
+            </p>
       </section>
     </div>
   );

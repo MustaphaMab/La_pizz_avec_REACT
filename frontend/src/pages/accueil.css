@@ -1,120 +1,39 @@
-.accueil {
-  font-family: Arial, sans-serif;
-}
-
-/* Bannière */
-.banner {
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
 .banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  text-align: center;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .cta-button {
-  background-color: #f27222;
+  background-color: #ff6b6b;
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  margin-top: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #e65a00;
+  background-color: #ff4757;
 }
 
-/* À propos */
-.about {
-  padding: 40px;
-  text-align: center;
-}
-
-/* Galerie */
-.gallery {
-  background: #f9f9f9;
-  padding: 40px;
-  text-align: center;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* Témoignages */
-.testimonials {
-  padding: 40px;
-  text-align: center;
-}
-
-.testimonial-cards {
+.pizza-cards, .testimonial-cards, .team-members, .gallery-grid {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.testimonial-card {
-  background: white;
+.pizza-card, .testimonial-card, .team-member {
+  background: #fff;
+  border: 1px solid #e0e0e0;
   padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  font-style: italic;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-/* Équipe */
-.team {
-  background: #f9f9f9;
-  padding: 40px;
-  text-align: center;
-}
-
-.team-members {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.team-member {
-  width: 200px;
-  text-align: center;
-}
-
-.team-member img {
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-}
-
-.contact-section {
-  padding: 40px;
-  text-align: center;
+.pizza-card:hover, .testimonial-card:hover, .team-member:hover {
+  transform: scale(1.05);
 }

@@ -23,6 +23,7 @@ body {
 body, p, .accueil {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 200%;
 }
 
 
@@ -162,6 +163,7 @@ body, p, .accueil {
 h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
+  font-size: 350%;
 }
 
 

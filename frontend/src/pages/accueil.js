@@ -11,7 +11,7 @@ function Accueil() {
       </section>
 
       <section>
-      <h1>La Pizz'</h1>
+      <h1>La Pizz' de Moos</h1>
       <p>Découvrez nos pizzas artisanales, préparées avec passion</p>
       </section>
 

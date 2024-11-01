@@ -1,6 +1,7 @@
 /* Styles globaux */
 .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
   padding: 80px;
   text-align: center;
   color: white;
@@ -45,7 +46,7 @@
 
 .pizza-card img {
   width: 100%;
-  height: 100%;
+  height: 100;
   max-width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -125,5 +126,5 @@
 }
 
 .about p {
-  width: 30%;
+  width: 100%;
 }

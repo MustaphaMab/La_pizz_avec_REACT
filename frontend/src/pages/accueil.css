@@ -15,7 +15,7 @@ body, p, .accueil {
 /* Styles globaux */
 .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
+  width: auto;
   padding: 80px;
   text-align: center;
   color: white;

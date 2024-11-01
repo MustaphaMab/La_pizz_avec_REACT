@@ -46,7 +46,7 @@ function Accueil() {
         <h2>Galerie de Photos</h2>
         <p>Découvrez nos pizzas et notre ambiance conviviale en images.</p>
         <div className="gallery-grid">
-          {['/images/gallery1.jpg', '/images/gallery2.jpg', '/images/gallery3.jpg', '/images/gallery4.jpg'].map((img, idx) => (
+          {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
             <img src={img} alt={`Gallery ${idx + 1}`} key={idx} />
           ))}
         </div>
@@ -75,9 +75,9 @@ function Accueil() {
         <p>Notre équipe dédiée travaille avec passion pour vous offrir le meilleur service.</p>
         <div className="team-members">
           {[
-            { image: '/images/chef.jpg', name: 'Chef Giovanni', role: 'Maître pizzaiolo avec 20 ans d\'expérience' },
-            { image: '/images/manager.jpg', name: 'Lisa Martin', role: 'Responsable de salle' },
-            { image: '/images/delivery.jpg', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
+            { image: '/images/maitre_pizzaiolo.jpg', name: 'Chef Giovanni', role: 'Maître pizzaiolo avec 20 ans d\'expérience' },
+            { image: '/images/chef_salle.jpg', name: 'Lisa Martin', role: 'Responsable de salle' },
+            { image: '/images/serveur_restaurant.jpg', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
           ].map((member, index) => (
             <div className="team-member" key={index}>
               <img src={member.image} alt={member.name} />

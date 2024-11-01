@@ -13,7 +13,7 @@ function Accueil() {
 
       {/* Section À Propos */}
       <section className="about">
-        <p><strong>Qualité et Authenticité.</strong></p> 
+        <p><strong>QUALITE ET AUTHENTICITE</strong></p> 
         <p><strong>LIVRAISON GRATUITE</strong></p>
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>

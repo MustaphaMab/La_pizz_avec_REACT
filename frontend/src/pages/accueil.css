@@ -58,9 +58,9 @@
 }
 
 .pizza-card img {
-  width: 100%; /* Image occupe toute la largeur de la carte */
+  width: auto; /* Image occupe toute la largeur de la carte */
   height: auto; /* Préserve les proportions de l'image */
-  max-width: 200px; /* Taille maximale pour les images */
+  max-width: auto; /* Taille maximale pour les images */
   border-radius: 8px;
   margin-bottom: 10px;
 }

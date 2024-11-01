@@ -9,7 +9,6 @@ function Accueil() {
         <div className="banner-overlay">
           <h1>Bienvenue à La Pizz'</h1>
           <p>Des pizzas artisanales préparées avec amour et passion</p>
-          <button className="cta-button">Voir le menu</button>
         </div>
       </section>
 
@@ -17,11 +16,9 @@ function Accueil() {
       <section className="about">
         <h2>À Propos de Nous</h2>
         <p>
-          Chez <strong>La Pizz'</strong>, nous valorisons la qualité et l’authenticité. Nos ingrédients sont sélectionnés
-          pour vous offrir une expérience culinaire unique et mémorable.
-        </p>
+          Chez <strong>La Pizz'</strong>, nous valorisons la qualité et l’authenticité.</p> 
+          <p>Nos ingrédients sont sélectionnés pour vous offrir une expérience culinaire unique et mémorable.</p>
         <div className="about-highlight">
-          <img src="/images/ingredients.jpg" alt="Ingrédients frais" />
           <p>Des ingrédients frais et locaux pour des pizzas authentiques.</p>
         </div>
       </section>

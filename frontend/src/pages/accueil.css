@@ -20,10 +20,14 @@ body {
 }
 
 /* Appliquer Roboto pour le texte principal */
-body, p, .accueil {
+body, .accueil {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 200%;
+  font-size: 100%;
+}
+
+.p {
+font-size: 125%;
 }
 
 
@@ -160,12 +164,15 @@ body, p, .accueil {
   transform: scale(1.05);
 }
 
-h2, h3, h4 {
+h2, h4 {
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
-  font-size: 350%;
+  font-size: 135%;
 }
 
+h3 {
+  font-size: 150%;
+}
 
 /* Fond noir pour toute la page */
 .accueil {

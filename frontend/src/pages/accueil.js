@@ -7,19 +7,15 @@ function Accueil() {
       {/* Bannière Parallaxe */}
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
         <div className="banner-overlay">
-          <h1>LA PIZZ' A MOOS</h1>
+          <h1 className="main-title">LA PIZZ'</h1>
         </div>
       </section>
 
       {/* Section À Propos */}
       <section className="about">
-        <h2>À Propos de Nous</h2>
         <p><strong>Qualité et Authenticité.</strong></p> 
-          <p><strong>LIVRAISON GRATUITE</strong></p>
-          <p><strong>CUITES AU FEU DE BOIS</strong></p>
-        <div className="about-highlight">
-          <p>Des ingrédients frais et locaux pour des pizzas authentiques.</p>
-        </div>
+        <p><strong>LIVRAISON GRATUITE</strong></p>
+        <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>
 
       {/* Section Pizzas Vedettes */}
@@ -53,7 +49,7 @@ function Accueil() {
 
       {/* Section Témoignages */}
       <section className="testimonials">
-        <h2>Ce que nos clients disent</h2>
+        <h2 className="testimonial-title">Ce que nos clients disent</h2>
         <div className="testimonial-cards">
           {[
             { text: "“Les meilleures pizzas que j'ai jamais goûtées !”", author: 'Marie L.' },

@@ -1,3 +1,17 @@
+
+/* Appliquer Montserrat pour les titres */
+.main-title, h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* Appliquer Roboto pour le texte principal */
+body, p, .accueil {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+
 /* Styles globaux */
 .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -42,6 +56,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  color: #000;
 }
 
 .pizza-card img {
@@ -79,13 +94,14 @@
 /* Témoignages */
 .testimonial-title {
   text-align: center;
-  color: #ff3333; /* Texte en rouge */
+  color: #ffffff; /* Texte en rouge */
   font-size: 2rem;
   padding-bottom: 20px;
 }
 
 .testimonial-card p, .testimonial-card h4 {
-  color: #ff3333; /* Texte en rouge pour les témoignages */
+  color: #ffffff; /* Texte en rouge pour les témoignages */
+  text-align: center;
 }
 /* Équipe */
 .team-member img {
@@ -93,6 +109,7 @@
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .team-member {

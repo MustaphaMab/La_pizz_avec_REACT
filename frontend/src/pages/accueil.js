@@ -20,7 +20,7 @@ function Accueil() {
 
       {/* Section Pizzas Vedettes */}
       <section className="featured-pizzas">
-        <h2>Nos Pizzas Vedettes</h2>
+        <h2>NOS PIZZAS VEDETTES</h2>
         <div className="pizza-cards">
           {[
             { image: '/images/pizza1.jpg', title: 'Pizza Margherita', description: 'Tomate, mozzarella, basilic' },
@@ -38,8 +38,7 @@ function Accueil() {
 
       {/* Section Galerie */}
       <section className="gallery">
-        <h2>Galerie de Photos</h2>
-        <p>Découvrez nos pizzas et notre ambiance conviviale en images.</p>
+        <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
         <div className="gallery-grid">
           {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
             <img src={img} alt={`Gallery ${idx + 1}`} key={idx} />

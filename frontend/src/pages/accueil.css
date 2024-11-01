@@ -3,6 +3,14 @@ body {
   background-color: #f0f0f0; /* Couleur du fond autour de la marge */
 }
 
+/* Pour une séparation moderne entre les sections */
+.section-divider {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 105, 135, 1), rgba(253, 200, 48, 1));
+  margin: 40px auto; /* Centre la ligne et ajoute un espace au-dessus et au-dessous */
+  border-radius: 8px;
+}
 
 /* Appliquer Montserrat pour les titres */
 .main-title, h1, h2, h3 {
@@ -105,7 +113,7 @@ body, p, .accueil {
 .testimonial-title {
   text-align: center;
   color: #ffffff; /* Texte en rouge */
-  font-size: 2rem;
+  font-size: 325%;
   padding-bottom: 20px;
 }
 
@@ -114,29 +122,54 @@ body, p, .accueil {
   text-align: center;
 }
 /* Équipe */
-.team-member img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement l'ensemble */
   text-align: center;
+  padding: 20px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Ajoute de l’espace entre les membres de l’équipe */
+  max-width: 800px; /* Limite la largeur pour un affichage plus compact */
+  margin-top: 20px;
 }
 
 .team-member {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-width: 200px;
   transition: transform 0.3s ease;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .team-member:hover {
   transform: scale(1.05);
 }
 
+h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+
 /* Fond noir pour toute la page */
 .accueil {
-  background-color: #000;
-  color: #fff;
-  padding-bottom: 40px;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
 }
 
 /* Bannière */

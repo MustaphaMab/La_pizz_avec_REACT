@@ -4,21 +4,20 @@ import './accueil.css';
 function Accueil() {
   return (
     <div className="accueil">
-      {/* Bannière Parallaxe */}
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
         <div className="banner-overlay">
           <h1 className="main-title">LA PIZZ'</h1>
         </div>
       </section>
 
-      {/* Section À Propos */}
       <section className="about">
-        <p><strong>QUALITE ET AUTHENTICITE</strong></p> 
+        <p><strong>QUALITE ET AUTHENTICITE</strong></p>
         <p><strong>LIVRAISON GRATUITE</strong></p>
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>
 
-      {/* Section Pizzas Vedettes */}
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
       <section className="featured-pizzas">
         <h2>NOS PIZZAS VEDETTES</h2>
         <div className="pizza-cards">
@@ -36,7 +35,8 @@ function Accueil() {
         </div>
       </section>
 
-      {/* Section Galerie */}
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
       <section className="gallery">
         <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
         <div className="gallery-grid">
@@ -46,7 +46,8 @@ function Accueil() {
         </div>
       </section>
 
-      {/* Section Témoignages */}
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
       <section className="testimonials">
         <h2 className="testimonial-title">Ce que nos clients disent</h2>
         <div className="testimonial-cards">
@@ -63,7 +64,8 @@ function Accueil() {
         </div>
       </section>
 
-      {/* Section Équipe */}
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
       <section className="team">
         <h2>Rencontrez notre Équipe</h2>
         <p>Notre équipe dédiée travaille avec passion pour vous offrir le meilleur service.</p>
@@ -82,7 +84,8 @@ function Accueil() {
         </div>
       </section>
 
-      {/* Section Contact */}
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
       <section className="contact-section">
         <h2>Nous Contacter</h2>
         <p>Besoin d’informations supplémentaires ? N'hésitez pas à nous joindre !</p>

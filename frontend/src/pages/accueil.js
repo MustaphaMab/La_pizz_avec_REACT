@@ -7,17 +7,16 @@ function Accueil() {
       {/* Bannière Parallaxe */}
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
         <div className="banner-overlay">
-          <h1>Bienvenue à La Pizz'</h1>
-          <p>Des pizzas artisanales préparées avec amour et passion</p>
+          <h1>LA PIZZ' A MOOS</h1>
         </div>
       </section>
 
       {/* Section À Propos */}
       <section className="about">
         <h2>À Propos de Nous</h2>
-        <p>
-          Chez <strong>La Pizz'</strong>, nous valorisons la qualité et l’authenticité.</p> 
-          <p>Nos ingrédients sont sélectionnés pour vous offrir une expérience culinaire unique et mémorable.</p>
+        <p><strong>Qualité et Authenticité.</strong></p> 
+          <p><strong>LIVRAISON GRATUITE</strong></p>
+          <p><strong>CUITES AU FEU DE BOIS</strong></p>
         <div className="about-highlight">
           <p>Des ingrédients frais et locaux pour des pizzas authentiques.</p>
         </div>
@@ -77,7 +76,7 @@ function Accueil() {
           {[
             { image: '/images/maitre_pizzaiolo.jpg', name: 'Chef Giovanni', role: 'Maître pizzaiolo avec 20 ans d\'expérience' },
             { image: '/images/chef_salle.jpg', name: 'Lisa Martin', role: 'Responsable de salle' },
-            { image: '/images/serveur_restaurant.jpg', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
+            { image: '/images/serveur_restaurant.png', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
           ].map((member, index) => (
             <div className="team-member" key={index}>
               <img src={member.image} alt={member.name} />

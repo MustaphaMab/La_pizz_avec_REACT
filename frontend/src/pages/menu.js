@@ -27,7 +27,7 @@ function Menu() {
             <div className="pizza-list">
                 {pizzas.map((pizza) => (
                     <div key={pizza.id} className="pizza-item">
-                        <img src={pizza.image} alt={pizza.name} className="pizza-image" />
+                        
                         <div className="pizza-info">
                             <h2 className="pizza-name">{pizza.name}</h2>
                             <p className="pizza-description">{pizza.description}</p>

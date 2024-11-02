@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock, } from 'react-icons/fa';
 import './contact.css';
 
 function Contact() {
@@ -61,13 +61,7 @@ function Contact() {
                 ></iframe>
             </div>
 
-            {/* Liens vers les réseaux sociaux */}
-            <div className="social-media">
-                <h3>Suivez-nous</h3>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            </div>
+            
         </div>
     );
 }

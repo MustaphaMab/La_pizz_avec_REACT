@@ -1,69 +1,91 @@
-/* Contact page container */
+/* contact.css */
 .contact-container {
-    max-width: 600px;
-    margin: 60px auto;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    color: #fff;
+    background-color: #121212;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Title and contact info */
-.contact-container h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
+.contact-description {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 .contact-info {
-    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 20px;
-    line-height: 1.5;
-    color: #666;
 }
 
-/* Form styling */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    color: #f27222;
+    font-size: 1.2em;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 20px;
 }
 
 .contact-form label {
-    text-align: left;
     font-weight: bold;
-    color: #333;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    border: 1px solid #ddd;
     font-size: 1em;
-    transition: border-color 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #f27222;
-}
-
-/* Submit button styling */
 .contact-form button {
+    padding: 10px;
     background-color: #f27222;
-    color: white;
-    font-size: 1em;
-    padding: 12px;
+    color: #fff;
     border: none;
     border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #e25e0d;
+    background-color: #e65d00;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #f27222;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #e65d00;
 }

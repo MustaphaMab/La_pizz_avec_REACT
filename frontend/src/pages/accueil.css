@@ -33,7 +33,7 @@ font-size: 125%;
 
 /* Styles globaux */
 .banner-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(0, 0, 0);
   width: auto;
   padding: 80px;
   text-align: center;

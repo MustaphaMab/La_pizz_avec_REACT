@@ -1,8 +1,30 @@
-/* footer.css */
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: rgb(252, 177, 27);
-    color: white;
-  }
-  
+/* Styles pour le footer */
+.footer {
+  background-color: #121212;
+  color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  border-top: 2px solid #f27222;
+}
+
+.footer p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* Icônes des réseaux sociaux */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #f27222;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}

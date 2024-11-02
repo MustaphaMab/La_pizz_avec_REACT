@@ -32,31 +32,16 @@ font-size: 125%;
 
 
 /* Styles globaux */
-.banner {
-  width: 100%;
-  height: 60vh; /* Ajuste la hauteur de la bannière ici selon tes besoins */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
 .banner-overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
+  width: auto;
   padding: 80px;
   text-align: center;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+}
+
+.banner {
+  width: auto;
 }
 
 .cta-button {
@@ -191,8 +176,9 @@ h3 {
 
 /* Fond noir pour toute la page */
 .accueil {
-  position: relative;
-  z-index: 0;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
 }
 
 /* Bannière */

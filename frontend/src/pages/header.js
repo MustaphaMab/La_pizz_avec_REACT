@@ -6,7 +6,6 @@ import './header.css';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Cette fonction ferme le menu si la taille de l'écran est supérieure à 768px
   const handleResize = () => {
     if (window.innerWidth > 768) {
       setMenuOpen(false); // Fermer le menu burger sur les grands écrans
@@ -34,12 +33,12 @@ function Header() {
           <div className="line"></div>
         </button>
 
-        {/* Liens de navigation avec affichage conditionnel */}
+        {/* Liens de navigation */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link></li>
           <li><Link to="/menu" onClick={() => setMenuOpen(false)}>Menu</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-          <li>04 42 59 65 98</li>
+          <li style={{ color: "#f27222", fontWeight: "bold" }}>04 42 59 65 98</li>
         </ul>
       </div>
     </header>

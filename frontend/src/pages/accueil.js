@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+  
+
 
 import './accueil.css';
 

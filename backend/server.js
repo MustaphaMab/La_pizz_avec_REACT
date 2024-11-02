@@ -13,29 +13,18 @@ app.use(express.json());
 
 let pizzas = [
     // Pizzas à la sauce tomate
-    { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8 },
-    { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9 },
-    { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9 },
-    { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9 },
-    { id: 5, name: 'Caprese', description: 'tomate, mozzarella, tomates cerises, basilic', price: 10 },
-    { id: 6, name: 'Quatre Saisons', description: 'tomate, mozzarella, artichauts, champignons, olives', price: 11 },
-    { id: 7, name: 'Diavola', description: 'tomate, mozzarella, salami piquant', price: 10 },
-    { id: 8, name: 'Marinara', description: 'tomate, ail, origan', price: 7 },
-    { id: 9, name: 'Prosciutto', description: 'tomate, mozzarella, prosciutto', price: 12 },
-    { id: 10, name: 'Reine', description: 'tomate, jambon, champignons, mozzarella', price: 9 }, // Pizza avec jambon
+    { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8, image: '/images/margherita.jpg' },
+    { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9, image: '/images/pepperoni.jpg' },
+    { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9, image: '/images/blanche-vegetarienne.jpg' },
+    { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9, image: '/images/napolitaine.jpg' },
 
     // Pizzas à la crème
-    { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10 },
-    { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11 },
-    { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12 },
-    { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12 },
-    { id: 15, name: 'Savoyarde', description: 'crème, mozzarella, pommes de terre, lardons, reblochon', price: 13 },
-    { id: 16, name: 'Poulet Curry', description: 'crème, mozzarella, poulet, curry', price: 11 },
-    { id: 17, name: 'Basilic', description: 'crème, mozzarella, basilic frais', price: 10 },
-    { id: 18, name: 'Champignons', description: 'crème, mozzarella, champignons', price: 9 },
-    { id: 19, name: 'Paysanne', description: 'crème, mozzarella, poivrons, oignons', price: 9 },
-    { id: 20, name: 'Forestière', description: 'crème, mozzarella, champignons, oignons, persil', price: 11 },
+    { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10, image: '/images/blanche-vegetarienne.jpg' },
+    { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11, image: '/images/carbonara.jpg' },
+    { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12, image: '/images/saumon.jpg' },
+    { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12, image: '/images/4-fromages.jpg' },
 ];
+
 
 // --- Routes pour l'utilisateur ---
 app.get('/api/pizzas', (req, res) => {

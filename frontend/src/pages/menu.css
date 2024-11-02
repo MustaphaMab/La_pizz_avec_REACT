@@ -9,7 +9,7 @@
 
 /* Bannière de présentation */
 .menu-banner {
-  background-image: url('/images/menu-banner.jpg'); /* Assurez-vous que cette image est accessible */
+  
   background-size: cover;
   background-position: center;
   color: white;

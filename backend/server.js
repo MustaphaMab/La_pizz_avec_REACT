@@ -11,18 +11,21 @@ const SECRET_KEY = "votre_cle_secrete"; // Remplacez par une clé sécurisée
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static('frontend/public'));
+
+
 let pizzas = [
     // Pizzas à la sauce tomate
-    { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8, image: '/images/margherita.jpg' },
-    { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9, image: '/images/pepperoni.jpg' },
-    { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9, image: '/images/blanche-vegetarienne.jpg' },
-    { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9, image: '/images/napolitaine.jpg' },
+    { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8, image: `${process.env.REACT_APP_API_URL}/images/margherita.jpg` },
+    { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9, image: `${process.env.REACT_APP_API_URL}/images/pepperoni.jpg` },
+    { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
+    { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9, image: `${process.env.REACT_APP_API_URL}/images/napolitaine.jpg` },
 
     // Pizzas à la crème
-    { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10, image: '/images/blanche-vegetarienne.jpg' },
-    { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11, image: '/images/carbonara.jpg' },
-    { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12, image: '/images/saumon.jpg' },
-    { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12, image: '/images/4-fromages.jpg' },
+    { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
+    { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11, image: `${process.env.REACT_APP_API_URL}/images/carbonara.jpg` },
+    { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12, image: `${process.env.REACT_APP_API_URL}/images/saumon.jpg` },
+    { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12, image: `${process.env.REACT_APP_API_URL}/images/4-fromages.jpg` },
 ];
 
 

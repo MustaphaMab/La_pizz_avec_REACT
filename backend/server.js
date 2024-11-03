@@ -20,8 +20,17 @@ const SECRET_KEY = "votre_cle_secrete"; // Clé utilisée pour signer les tokens
 
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected...'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .then(() => {
+    console.log('MongoDB connected...');
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+  });
+
+app.listen(PORT, () => {
+  console.log(`Serveur d'API en cours sur le port ${PORT}`);
+});
+
 
 
 

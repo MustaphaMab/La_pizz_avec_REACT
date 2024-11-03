@@ -12,11 +12,11 @@ function Contact() {
             <div className="contact-info">
                 <div className="contact-item">
                     <FaPhoneAlt className="contact-icon" />
-                    <span>Téléphone : 04 42 59 65 98</span>
+                    <span>Téléphone : 01 23 45 67 89</span>
                 </div>
                 <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon" />
-                    <span>Adresse : 123 Rue du Bon Goût, Vitrolles, France</span>
+                    <span>Adresse : 3 Bd Michelet, 13008,  Marseille, France</span>
                 </div>
                 <div className="contact-item">
                     <FaEnvelope className="contact-icon" />

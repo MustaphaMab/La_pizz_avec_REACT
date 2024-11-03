@@ -1,17 +1,33 @@
-const express = require('express');
-const cors = require('cors');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+// ce fichier server.js est un serveur Express.js configuré pour gérer une API de gestion de pizzas.
+
+require('dotenv').config();
+
+// Middleware
+const express = require('express'); // Framework pour créer le serveur
+const cors = require('cors'); // Autorise les requetes cross-origin
+const jwt = require('jsonwebtoken');  //Utilisé pour créer et vérifier les tokens JWT
+const bcrypt = require('bcryptjs'); // Sert à hacher les mots de passe.
+const mongoose = require('mongoose');
 
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-const SECRET_KEY = "votre_cle_secrete"; // Remplacez par une clé sécurisée
 
-app.use(cors());
-app.use(express.json());
 
-app.use(express.static('frontend/public'));
+// Configuration du serveur
+const app = express(); //Instance du serveur Express.
+const PORT = process.env.PORT || 5000; //Définition du port du serveur, configurable via une variable d'environnement.
+const SECRET_KEY = "votre_cle_secrete"; // Clé utilisée pour signer les tokens JWT.
+
+
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+
+
+app.use(cors()); //Active les CORS pour permettre les requêtes depuis des domaines externes.
+app.use(express.json()); // Permet de lire le JSON dans les requêtes.
+app.use(express.static('frontend/public')); // Sert des fichiers statiques depuis frontend/public.
 
 
 let pizzas = [
@@ -30,10 +46,14 @@ let pizzas = [
 
 
 // --- Routes pour l'utilisateur ---
+
+// Récupération de toutes les pizzas
 app.get('/api/pizzas', (req, res) => {
     res.json(pizzas);
 });
 
+
+// Récupération d'une pizza
 app.get('/api/pizzas/:id', (req, res) => {
     const pizza = pizzas.find(p => p.id === parseInt(req.params.id));
     if (pizza) {
@@ -44,6 +64,8 @@ app.get('/api/pizzas/:id', (req, res) => {
 });
 
 // --- Route de connexion de l'admin ---
+
+//Authentifie l'admin, génère un token JWT si les identifiants sont corrects.
 app.post('/api/admin/login', (req, res) => {
     const { username, password } = req.body;
     const adminUser = { username: "admin", password: "$2b$10$..." }; // Mot de passe chiffré
@@ -60,6 +82,8 @@ app.post('/api/admin/login', (req, res) => {
 });
 
 // Middleware pour vérifier le token
+
+//Vérifie si un token JWT valide est fourni dans l'en-tête Authorization des requêtes sécurisées.
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization'] && req.headers['authorization'].split(' ')[1];
     if (!token) return res.status(403).send('Token requis');
@@ -72,12 +96,16 @@ function authenticateToken(req, res, next) {
 }
 
 // --- Routes pour l'admin (sécurisées) ---
+
+// Ajoute une pizza
 app.post('/api/admin/pizzas', authenticateToken, (req, res) => {
     const newPizza = { id: pizzas.length + 1, ...req.body };
     pizzas.push(newPizza);
     res.status(201).json(newPizza);
 });
 
+
+// Modifie une pizza
 app.put('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
     const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
     if (pizzaIndex !== -1) {
@@ -88,6 +116,7 @@ app.put('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
     }
 });
 
+// Supprime une pizza
 app.delete('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
     const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
     if (pizzaIndex !== -1) {
@@ -98,7 +127,7 @@ app.delete('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
     }
 });
 
-// Démarrer le serveur
+// Permet de démarrer le serveur
 app.listen(PORT, () => {
     console.log(`Serveur d'API en cours sur le port ${PORT}`);
 });

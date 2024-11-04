@@ -136,7 +136,3 @@ app.delete('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
     }
 });
 
-// Permet de démarrer le serveur
-app.listen(PORT, () => {
-    console.log(`Serveur d'API en cours sur le port ${PORT}`);
-});

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa';
-import './coordonnéesLaPizz.css';
+import './CoordonnéesLaPizz.css';
 
-function coordonnéesLaPizz() {
+function CoordonnéesLaPizz() {
   return (
     <div className="contact-info">
       <div className="contact-item">
@@ -14,7 +14,7 @@ function coordonnéesLaPizz() {
         <span>Adresse : 3 Bd Michelet, 13008, Marseille, France</span>
       </div>
       <div className="contact-item">
-        <FaEnvelope className="contact-icon" />
+        <FaEnvelope className="contact-icon " />
         <span>Email : contact@lapizz.com</span>
       </div>
       <div className="contact-item">
@@ -25,4 +25,4 @@ function coordonnéesLaPizz() {
   );
 }
 
-export default coordonnéesLaPizz;
+export default CoordonnéesLaPizz;

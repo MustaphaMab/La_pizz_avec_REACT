@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-import coordonnéesLaPizz from './coordonnéesLaPizz';
+import CoordonnéesLaPizz from './CoordonnéesLaPizz';
 
 
 import './accueil.css';
@@ -95,7 +95,7 @@ function Accueil() {
         <h2 className="contact-title">Nous Contacter</h2>
         <p className="contact-description">Pour des questions, des suggestions ou des commandes, n'hésitez pas à nous écrire !</p>
         
-        <coordonnéesLaPizz />
+        <CoordonnéesLaPizz />
 
         <form className="contact-form">
           <input type="text" placeholder="Nom" className="contact-input" />

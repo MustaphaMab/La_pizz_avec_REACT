@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+
 import './accueil.css';
 
 function Accueil() {

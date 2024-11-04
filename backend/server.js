@@ -1,135 +1,148 @@
-// ce fichier server.js est un serveur Express.js configuré pour gérer une API de gestion de pizzas.
-
 require('dotenv').config();
 
-// Middleware
-const express = require('express'); // Framework pour créer le serveur
-const cors = require('cors'); // Autorise les requetes cross-origin
-const jwt = require('jsonwebtoken');  //Utilisé pour créer et vérifier les tokens JWT
-const bcrypt = require('bcryptjs'); // Sert à hacher les mots de passe.
+const express = require('express');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 
-
-
+const Comment = require('./models/Comment');
+const Message = require('./models/Message');
 
 // Configuration du serveur
-const app = express(); //Instance du serveur Express.
-const PORT = process.env.PORT || 5000; //Définition du port du serveur, configurable via une variable d'environnement.
-const SECRET_KEY = "votre_cle_secrete"; // Clé utilisée pour signer les tokens JWT.
-
-
+const app = express();
+const PORT = process.env.PORT || 5000;
+const SECRET_KEY = "votre_cle_secrete";
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+app.use(cors());
+app.use(express.json());
+app.use(express.static('frontend/public'));
 
+let pizzas = [
+  { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8, image: `${process.env.REACT_APP_API_URL}/images/margherita.jpg` },
+  { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9, image: `${process.env.REACT_APP_API_URL}/images/pepperoni.jpg` },
+  { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
+  { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9, image: `${process.env.REACT_APP_API_URL}/images/napolitaine.jpg` },
+  { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
+  { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11, image: `${process.env.REACT_APP_API_URL}/images/carbonara.jpg` },
+  { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12, image: `${process.env.REACT_APP_API_URL}/images/saumon.jpg` },
+  { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12, image: `${process.env.REACT_APP_API_URL}/images/4-fromages.jpg` },
+];
+
+// Routes pour les pizzas
+app.get('/api/pizzas', (req, res) => {
+  res.json(pizzas);
+});
+
+app.get('/api/pizzas/:id', (req, res) => {
+  const pizza = pizzas.find(p => p.id === parseInt(req.params.id));
+  if (pizza) {
+    res.json(pizza);
+  } else {
+    res.status(404).send('Pizza non trouvée');
+  }
+});
+
+// Route de connexion de l'admin
+app.post('/api/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  const adminUser = { username: "admin", password: "$2b$10$..." }; // Remplacez par le mot de passe haché réel
+
+  bcrypt.compare(password, adminUser.password, (err, result) => {
+    if (result) {
+      const token = jwt.sign({ username: adminUser.username }, SECRET_KEY, { expiresIn: '1h' });
+      res.json({ token });
+    } else {
+      res.status(401).send('Échec de la connexion');
+    }
+  });
+});
+
+function authenticateToken(req, res, next) {
+  const token = req.headers['authorization'] && req.headers['authorization'].split(' ')[1];
+  if (!token) return res.status(403).send('Token requis');
+
+  jwt.verify(token, SECRET_KEY, (err, user) => {
+    if (err) return res.status(403).send('Token invalide');
+    req.user = user;
+    next();
+  });
+}
+
+// Routes sécurisées pour l'admin
+app.post('/api/admin/pizzas', authenticateToken, (req, res) => {
+  const newPizza = { id: pizzas.length + 1, ...req.body };
+  pizzas.push(newPizza);
+  res.status(201).json(newPizza);
+});
+
+app.put('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
+  const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
+  if (pizzaIndex !== -1) {
+    pizzas[pizzaIndex] = { ...pizzas[pizzaIndex], ...req.body };
+    res.json(pizzas[pizzaIndex]);
+  } else {
+    res.status(404).send('Pizza non trouvée');
+  }
+});
+
+app.delete('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
+  const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
+  if (pizzaIndex !== -1) {
+    const deletedPizza = pizzas.splice(pizzaIndex, 1);
+    res.json(deletedPizza);
+  } else {
+    res.status(404).send('Pizza non trouvée');
+  }
+});
+
+// Routes pour les commentaires
+app.post('/api/comments', async (req, res) => {
+  const { username, content, rating } = req.body;
+  try {
+    const comment = new Comment({ username, content, rating });
+    await comment.save();
+    res.status(201).json({ message: 'Commentaire soumis pour approbation.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la soumission du commentaire.' });
+  }
+});
+
+app.get('/api/comments', async (req, res) => {
+  try {
+    const comments = await Comment.find({ approved: true });
+    res.json(comments);
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la récupération des commentaires.' });
+  }
+});
+
+// Routes pour les messages
+app.post('/api/messages', async (req, res) => {
+  const { username, content } = req.body;
+  try {
+    const message = new Message({ username, content });
+    await message.save();
+    res.status(201).json({ message: 'Message envoyé avec succès.' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de l\'envoi du message.' });
+  }
+});
+
+app.get('/api/messages', async (req, res) => {
+  try {
+    const messages = await Message.find();
+    res.json(messages);
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la récupération des messages.' });
+  }
+});
+
+// Démarrage du serveur
 app.listen(PORT, () => {
   console.log(`Serveur d'API en cours sur le port ${PORT}`);
 });
-
-
-
-
-app.use(cors()); //Active les CORS pour permettre les requêtes depuis des domaines externes.
-app.use(express.json()); // Permet de lire le JSON dans les requêtes.
-app.use(express.static('frontend/public')); // Sert des fichiers statiques depuis frontend/public.
-
-
-let pizzas = [
-    // Pizzas à la sauce tomate
-    { id: 1, name: 'Margherita', description: 'tomate, mozzarella, basilic', price: 8, image: `${process.env.REACT_APP_API_URL}/images/margherita.jpg` },
-    { id: 2, name: 'Pepperoni', description: 'tomate, mozzarella, pepperoni', price: 9, image: `${process.env.REACT_APP_API_URL}/images/pepperoni.jpg` },
-    { id: 3, name: 'Végétarienne', description: 'tomate, mozzarella, poivrons, oignons, champignons', price: 9, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
-    { id: 4, name: 'Napolitaine', description: 'tomate, mozzarella, anchois, câpres', price: 9, image: `${process.env.REACT_APP_API_URL}/images/napolitaine.jpg` },
-
-    // Pizzas à la crème
-    { id: 11, name: 'Blanche Végétarienne', description: 'crème, mozzarella, champignons, oignons', price: 10, image: `${process.env.REACT_APP_API_URL}/images/blanche-vegetarienne.jpg` },
-    { id: 12, name: 'Carbonara', description: 'crème, mozzarella, lardons, œuf', price: 11, image: `${process.env.REACT_APP_API_URL}/images/carbonara.jpg` },
-    { id: 13, name: 'Saumon', description: 'crème, mozzarella, saumon fumé', price: 12, image: `${process.env.REACT_APP_API_URL}/images/saumon.jpg` },
-    { id: 14, name: 'Quatre Fromages', description: 'crème, mozzarella, gorgonzola, chèvre, parmesan', price: 12, image: `${process.env.REACT_APP_API_URL}/images/4-fromages.jpg` },
-];
-
-
-// --- Routes pour l'utilisateur ---
-
-// Récupération de toutes les pizzas
-app.get('/api/pizzas', (req, res) => {
-    res.json(pizzas);
-});
-
-
-// Récupération d'une pizza
-app.get('/api/pizzas/:id', (req, res) => {
-    const pizza = pizzas.find(p => p.id === parseInt(req.params.id));
-    if (pizza) {
-        res.json(pizza);
-    } else {
-        res.status(404).send('Pizza non trouvée');
-    }
-});
-
-// --- Route de connexion de l'admin ---
-
-//Authentifie l'admin, génère un token JWT si les identifiants sont corrects.
-app.post('/api/admin/login', (req, res) => {
-    const { username, password } = req.body;
-    const adminUser = { username: "admin", password: "$2b$10$..." }; // Mot de passe chiffré
-
-    // Vérification du mot de passe
-    bcrypt.compare(password, adminUser.password, (err, result) => {
-        if (result) {
-            const token = jwt.sign({ username: adminUser.username }, SECRET_KEY, { expiresIn: '1h' });
-            res.json({ token });
-        } else {
-            res.status(401).send('Échec de la connexion');
-        }
-    });
-});
-
-// Middleware pour vérifier le token
-
-//Vérifie si un token JWT valide est fourni dans l'en-tête Authorization des requêtes sécurisées.
-function authenticateToken(req, res, next) {
-    const token = req.headers['authorization'] && req.headers['authorization'].split(' ')[1];
-    if (!token) return res.status(403).send('Token requis');
-
-    jwt.verify(token, SECRET_KEY, (err, user) => {
-        if (err) return res.status(403).send('Token invalide');
-        req.user = user;
-        next();
-    });
-}
-
-// --- Routes pour l'admin (sécurisées) ---
-
-// Ajoute une pizza
-app.post('/api/admin/pizzas', authenticateToken, (req, res) => {
-    const newPizza = { id: pizzas.length + 1, ...req.body };
-    pizzas.push(newPizza);
-    res.status(201).json(newPizza);
-});
-
-
-// Modifie une pizza
-app.put('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
-    const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
-    if (pizzaIndex !== -1) {
-        pizzas[pizzaIndex] = { ...pizzas[pizzaIndex], ...req.body };
-        res.json(pizzas[pizzaIndex]);
-    } else {
-        res.status(404).send('Pizza non trouvée');
-    }
-});
-
-// Supprime une pizza
-app.delete('/api/admin/pizzas/:id', authenticateToken, (req, res) => {
-    const pizzaIndex = pizzas.findIndex(p => p.id === parseInt(req.params.id));
-    if (pizzaIndex !== -1) {
-        const deletedPizza = pizzas.splice(pizzaIndex, 1);
-        res.json(deletedPizza);
-    } else {
-        res.status(404).send('Pizza non trouvée');
-    }
-});
-

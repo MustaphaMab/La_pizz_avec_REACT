@@ -300,3 +300,15 @@ h4 {
   color: #ff6b6b;
   font-size: 1.2rem;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.875rem;
+  margin-top: 10px;
+}

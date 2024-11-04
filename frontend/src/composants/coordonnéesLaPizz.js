@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa';
-import './contactInfo.css';
+import './coordonnéesLaPizz.css';
 
-function ContactInfo() {
+function coordonnéesLaPizz() {
   return (
     <div className="contact-info">
       <div className="contact-item">
@@ -25,4 +25,4 @@ function ContactInfo() {
   );
 }
 
-export default ContactInfo;
+export default coordonnéesLaPizz;

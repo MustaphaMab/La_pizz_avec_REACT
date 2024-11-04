@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-import coordonnéesLaPizz from './ContactInfo';
+import coordonnéesLaPizz from './coordonnéesLaPizz';
 
 
 import './accueil.css';

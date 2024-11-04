@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-
+import ContactInfo from './ContactInfo';
 
 
 import './accueil.css';
@@ -95,20 +95,7 @@ function Accueil() {
         <h2 className="contact-title">Nous Contacter</h2>
         <p className="contact-description">Pour des questions, des suggestions ou des commandes, n'hésitez pas à nous écrire !</p>
         
-        <div className="contact-info">
-          <div className="contact-item">
-            <FaPhoneAlt className="contact-icon" />
-            <span>Téléphone : 04 43 59 65 98</span>
-          </div>
-          <div className="contact-item">
-            <FaMapMarkerAlt className="contact-icon" />
-            <span>Adresse : 123 Rue du Bon Goût, Vitrolles, France</span>
-          </div>
-          <div className="contact-item">
-            <FaEnvelope className="contact-icon" />
-            <span>Email : contact@lapizz.com</span>
-          </div>
-        </div>
+        <ContactInfo />
 
         <form className="contact-form">
           <input type="text" placeholder="Nom" className="contact-input" />

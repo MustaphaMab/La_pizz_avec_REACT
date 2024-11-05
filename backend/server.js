@@ -194,11 +194,11 @@ app.post("/api/comments", async (req, res) => {
     await comment.save();
     res.status(201).json({ message: "Commentaire soumis pour approbation." });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Erreur lors de la soumission du commentaire." });
+    console.error('Erreur lors de la soumission du commentaire:', error); // Affichage de l'erreur
+    res.status(500).json({ error: "Erreur lors de la soumission du commentaire." });
   }
 });
+
 
 app.get("/api/comments", async (req, res) => {
   try {
@@ -217,22 +217,26 @@ app.post("/api/messages", async (req, res) => {
 
   try {
     const message = new Message({ username, content });
-    await message.save(); // Enregistre le message dans la base de données
+    await message.save();
     res.status(201).json({ message: "Message envoyé avec succès." });
   } catch (error) {
+    console.error('Erreur lors de l\'envoi du message:', error); // Affichage de l'erreur
     res.status(500).json({ error: "Erreur lors de l'envoi du message." });
   }
 });
+
 
 // Route pour récupérer tous les messages (admin)
 app.get("/api/messages", async (req, res) => {
   try {
     const messages = await Message.find();
-    res.json(messages); // Renvoie tous les messages enregistrés
+    res.json(messages);
   } catch (error) {
+    console.error('Erreur lors de la récupération des messages:', error); // Affichage de l'erreur
     res.status(500).json({ error: "Erreur lors de la récupération des messages." });
   }
 });
+
 
 // Démarrage du serveur
 app.listen(PORT, () => {

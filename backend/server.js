@@ -14,6 +14,47 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const SECRET_KEY = "votre_cle_secrete";
 
+// Route pour approuver un commentaire
+app.put(
+  "/api/admin/comments/approve/:id",
+  authenticateToken,
+  async (req, res) => {
+    try {
+      const comment = await Comment.findById(req.params.id);
+      if (!comment) {
+        return res.status(404).send("Commentaire non trouvé");
+      }
+
+      // On marque le commentaire comme approuvé
+      comment.approved = true;
+      await comment.save();
+
+      res.json({ message: "Commentaire approuvé avec succès." });
+    } catch (error) {
+      res
+        .status(500)
+        .json({ error: "Erreur lors de l'approbation du commentaire." });
+    }
+  }
+);
+
+// Démarrage du serveur
+app.listen(PORT, () => {
+  console.log(`Serveur d'API en cours sur le port ${PORT}`);
+});
+
+function authenticateToken(req, res, next) {
+  const token =
+    req.headers["authorization"] && req.headers["authorization"].split(" ")[1];
+  if (!token) return res.status(403).send("Token requis");
+
+  jwt.verify(token, SECRET_KEY, (err, user) => {
+    if (err) return res.status(403).send("Token invalide");
+    req.user = user;
+    next();
+  });
+}
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected..."))
@@ -117,17 +158,6 @@ app.post("/api/admin/login", (req, res) => {
   });
 });
 
-function authenticateToken(req, res, next) {
-  const token =
-    req.headers["authorization"] && req.headers["authorization"].split(" ")[1];
-  if (!token) return res.status(403).send("Token requis");
-
-  jwt.verify(token, SECRET_KEY, (err, user) => {
-    if (err) return res.status(403).send("Token invalide");
-    req.user = user;
-    next();
-  });
-}
 
 // Routes sécurisées pour l'admin
 app.post("/api/admin/pizzas", authenticateToken, (req, res) => {
@@ -181,26 +211,26 @@ app.get("/api/comments", async (req, res) => {
   }
 });
 
-// Routes pour les messages
+// Route pour soumettre un message
 app.post("/api/messages", async (req, res) => {
   const { username, content } = req.body;
+
   try {
     const message = new Message({ username, content });
-    await message.save();
+    await message.save(); // Enregistre le message dans la base de données
     res.status(201).json({ message: "Message envoyé avec succès." });
   } catch (error) {
     res.status(500).json({ error: "Erreur lors de l'envoi du message." });
   }
 });
 
+// Route pour récupérer tous les messages (admin)
 app.get("/api/messages", async (req, res) => {
   try {
     const messages = await Message.find();
-    res.json(messages);
+    res.json(messages); // Renvoie tous les messages enregistrés
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Erreur lors de la récupération des messages." });
+    res.status(500).json({ error: "Erreur lors de la récupération des messages." });
   }
 });
 

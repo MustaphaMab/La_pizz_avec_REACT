@@ -1,18 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa';
 import './contact.css';
 
-
 function Contact() {
-  // Définir les états pour les champs de formulaire
+  // États pour le formulaire de contact
   const [username, setUsername] = useState('');
   const [content, setContent] = useState('');
 
-  // Fonction de soumission du formulaire
+  // États pour les commentaires
+  const [commentUsername, setCommentUsername] = useState('');
+  const [commentContent, setCommentContent] = useState('');
+  const [rating, setRating] = useState(1);
+  
+  // État pour les commentaires récupérés
+  const [comments, setComments] = useState([]);
+
+  // Récupérer les commentaires au chargement du composant
+  useEffect(() => {
+    fetch('/api/comments')
+      .then(response => response.json())
+      .then(data => setComments(data))
+      .catch(error => console.error('Erreur lors de la récupération des commentaires:', error));
+  }, []); // [] signifie qu'on ne l'appelle qu'une seule fois au chargement du composant
+
+  // Fonction de soumission du formulaire de contact
   const handleContactSubmit = (e) => {
     e.preventDefault();
-
-    // Remplacez par l'API de votre backend pour gérer les messages de contact
     fetch('/api/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -20,11 +33,32 @@ function Contact() {
     })
     .then(response => response.json())
     .then(data => {
-      alert(data.message); // Afficher un message de confirmation
-      setUsername(''); // Réinitialiser le champ Nom
-      setContent(''); // Réinitialiser le champ Message
+      alert(data.message);
+      setUsername('');
+      setContent('');
     })
     .catch(error => console.error('Erreur lors de l\'envoi du message:', error));
+  };
+
+  // Fonction de soumission du formulaire de commentaire
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    fetch('/api/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: commentUsername, content: commentContent, rating }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+      // Réinitialiser les champs
+      setCommentUsername('');
+      setCommentContent('');
+      setRating(1);
+      // Ajouter le commentaire directement dans la liste sans recharger
+      setComments([...comments, { username: commentUsername, content: commentContent, rating }]);
+    })
+    .catch(error => console.error('Erreur lors de l\'envoi du commentaire:', error));
   };
 
   return (
@@ -73,6 +107,51 @@ function Contact() {
         ></textarea>
         <button type="submit" className="contact-submit">Envoyer</button>
       </form>
+
+      {/* Formulaire de commentaires */}
+      <div className="comment-form">
+        <h2>Laissez un commentaire</h2>
+        <form onSubmit={handleCommentSubmit} className="contact-form">
+          <input
+            type="text"
+            placeholder="Votre Nom"
+            className="contact-input"
+            value={commentUsername}
+            onChange={(e) => setCommentUsername(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Votre Commentaire"
+            className="contact-textarea"
+            value={commentContent}
+            onChange={(e) => setCommentContent(e.target.value)}
+            required
+          ></textarea>
+          <div className="rating">
+            <label>Note :</label>
+            <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
+              {[1, 2, 3, 4, 5].map(num => (
+                <option key={num} value={num}>{num}</option>
+              ))}
+            </select>
+          </div>
+          <button type="submit" className="contact-submit">Soumettre le commentaire</button>
+        </form>
+      </div>
+
+      {/* Affichage des commentaires */}
+      <div className="comments-section">
+        <h3>Commentaires récents :</h3>
+        <ul className="comments-list">
+          {comments.map((comment, index) => (
+            <li key={index} className="comment-item">
+              <strong>{comment.username}</strong>
+              <p>{comment.content}</p>
+              <p>Note : {comment.rating} / 5</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {/* Carte Google Maps */}
       <div className="map-container">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa';
 import './contact.css';
 
+
 function Contact() {
   // Définir les états pour les champs de formulaire
   const [username, setUsername] = useState('');
@@ -77,9 +78,9 @@ function Contact() {
       <div className="map-container">
         <iframe
           title="La Pizz' Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.5051987275636!2d4.903402315711724!3d43.45491767912859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5f5f9b03e8459%3A0x8c4dd5e2937c56e!2sVitrolles%2C%20France!5e0!3m2!1sen!2sfr!4v1616946344068!5m2!1sen!2sfr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5810.240266556617!2d5.393326575423885!3d43.269858971122886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b8a778a71c19%3A0xf30ae56cc3f4dc1e!2sOrange%20V%C3%A9lodrome!5e0!3m2!1sfr!2sfr!4v1730838084026!5m2!1sfr!2sfr"
           width="100%"
-          height="300"
+          height="100%"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"

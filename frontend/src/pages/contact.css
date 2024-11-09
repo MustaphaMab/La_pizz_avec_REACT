@@ -68,7 +68,7 @@
 
 .map-container {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-top: 20px;
     border-radius: 8px;
     overflow: hidden;

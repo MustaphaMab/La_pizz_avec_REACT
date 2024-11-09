@@ -1,0 +1,23 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Sécurité stricte des transports
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Politique de sécurité du contenu (CSP)
+    Content-Security-Policy = "default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';"
+    # Options X-Frame
+    X-Frame-Options = "SAMEORIGIN"
+    # Options de type de contenu
+    X-Content-Type-Options = "nosniff"
+    # Politique de référencement
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Politique d'autorisations
+    Permissions-Policy = "geolocation=(self), microphone=(), camera=()"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    # CORS pour les appels API
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"

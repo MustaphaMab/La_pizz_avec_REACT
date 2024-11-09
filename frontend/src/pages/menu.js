@@ -6,19 +6,19 @@ import './menu.css';
 
 function Menu() {
     const [pizzas, setPizzas] = useState([]);
-    const [loading, setLoading] = useState(true);  // Ajout de l'état de chargement
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
-        // Faites une requête GET à l'API de pizzas
+        // requête GET à l'API de pizzas
         fetch(`${process.env.REACT_APP_API_URL}/api/pizzas`) 
             .then(response => response.json())
             .then(data => {
                 setPizzas(data);
-                setLoading(false); // Une fois les données chargées, mettre loading à false
+                setLoading(false); 
             })
             .catch(error => {
                 console.error("Impossible de charger les pizzas", error);
-                setLoading(false); // Même en cas d'erreur, on arrête le chargement
+                setLoading(false);
             });
     }, []);
 

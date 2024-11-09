@@ -1,18 +1,18 @@
 body {
-  margin: 20px; /* Vous pouvez ajuster la valeur pour un bord plus ou moins épais */
-  background-color: #f0f0f0; /* Couleur du fond autour de la marge */
+  margin: 20px; 
+  background-color: #f0f0f0; 
 }
 
-/* Pour une séparation moderne entre les sections */
+/* séparation entre les sections */
 .section-divider {
   width: 60%;
   height: 2px;
   background: linear-gradient(90deg, rgba(255, 105, 135, 1), rgba(253, 200, 48, 1));
-  margin: 40px auto; /* Centre la ligne et ajoute un espace au-dessus et au-dessous */
+  margin: 40px auto; 
   border-radius: 8px;
 }
 
-/* Appliquer Montserrat pour les titres */
+/* Montserrat pour les titres */
 .main-title, h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -42,11 +42,11 @@ font-size: 125%;
 
 .banner {
   width: 100%;
-  height: 60vh; /* Ajuste la hauteur selon tes besoins */
+  height: 60vh; 
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-top: 20px; /* Décale la bannière vers le bas */
+  margin-top: 20px; 
   overflow: hidden;
 }
 
@@ -124,20 +124,20 @@ font-size: 125%;
 /* Témoignages */
 .testimonial-title {
   text-align: center;
-  color: #ffffff; /* Texte en rouge */
+  color: #ffffff; 
   font-size: 150%;
   padding-bottom: 20px;
 }
 
 .testimonial-card p, .testimonial-card h4 {
-  color: #ffffff; /* Texte en rouge pour les témoignages */
+  color: #ffffff; 
   text-align: center;
 }
 /* Équipe */
 .team {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre horizontalement l'ensemble */
+  align-items: center; 
   text-align: center;
   padding: 20px;
 }
@@ -146,8 +146,8 @@ font-size: 125%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Ajoute de l’espace entre les membres de l’équipe */
-  max-width: 800px; /* Limite la largeur pour un affichage plus compact */
+  gap: 30px; 
+  max-width: 800px; 
   margin-top: 20px;
 }
 
@@ -191,14 +191,14 @@ h4 {
 
 /* Fond noir pour toute la page */
 .accueil {
-  padding-top: 20px; /* Ajoute un espace en haut de la section */
+  padding-top: 20px; 
   background-color: #121212;
   color: #ffffff;
 }
 
 /* Bannière */
 .main-title {
-  font-size: 3.5rem; /* Agrandir le titre */
+  font-size: 3.5rem; 
 }
 
 /* Section À Propos */
@@ -215,7 +215,7 @@ h4 {
 
 /* Section Contact */
 .contact-section {
-  background-color: #1f1f1f; /* Fond légèrement différent pour contraste */
+  background-color: #1f1f1f; 
   padding: 40px 20px;
   color: #ffffff;
   text-align: center;
@@ -259,7 +259,7 @@ h4 {
 
 /* Section Contact */
 .contact-section {
-  background-color: #1f1f1f; /* Fond légèrement différent pour contraste */
+  background-color: #1f1f1f; 
   padding: 40px 20px;
   color: #ffffff;
   text-align: center;

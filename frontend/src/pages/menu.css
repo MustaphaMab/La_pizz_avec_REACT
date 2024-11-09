@@ -1,7 +1,7 @@
-/* Styles globaux pour la page du menu */
+
 .menu-container {
-  background-color: #121212; /* Fond noir pour cohérence */
-  color: #ffffff; /* Texte blanc */
+  background-color: #121212;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
   font-family: 'Roboto', sans-serif;

@@ -18,7 +18,7 @@ function Accueil() {
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div> {/* Séparation */}
 
       <section className="featured-pizzas">
         <h2>NOS PIZZAS VEDETTES</h2>
@@ -37,7 +37,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div> {/* Séparation */}
 
       <section className="gallery">
         <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
@@ -48,7 +48,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div> {/* Séparation */}
 
       <section className="testimonials">
         <h2 className="testimonial-title">Ce que nos clients disent</h2>
@@ -66,7 +66,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div> {/* Séparation */}
 
       <section className="team">
         <h2>Rencontrez notre Équipe</h2>
@@ -86,7 +86,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div> {/* Séparation*/}
 
     </div>
   );

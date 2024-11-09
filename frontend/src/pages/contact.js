@@ -1,14 +1,18 @@
 import React from "react";
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import {
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaClock,
+} from "react-icons/fa";
 
 function Contact() {
   return (
     <div className="contact-container">
       <h1>Contactez-nous</h1>
-      <p className="contact-description">
-        Pour toute demande.
-        </p>
-        <p>Vous pouvez nous contacter directement via les coordonnées ci-dessous.
+      <p className="contact-description">Pour toute demande.
+  
+        Vous pouvez nous contacter directement via les coordonnées ci-dessous.
       </p>
 
       {/* Informations de contact */}

@@ -88,20 +88,6 @@ function Accueil() {
 
       <div className="section-divider"></div> {/* Séparation moderne */}
 
-      {/* Section Contact améliorée */}
-      <section className="contact-section">
-        <h2 className="contact-title">Nous Contacter</h2>
-        <p className="contact-description">Pour des questions, des suggestions ou des commandes, n'hésitez pas à nous écrire !</p>
-        
-       
-
-        <form className="contact-form">
-          <input type="text" placeholder="Nom" className="contact-input" />
-          <input type="email" placeholder="Email" className="contact-input" />
-          <textarea placeholder="Message" className="contact-textarea"></textarea>
-          <button type="submit" className="contact-submit">Envoyer</button>
-        </form>
-      </section>
     </div>
   );
 }

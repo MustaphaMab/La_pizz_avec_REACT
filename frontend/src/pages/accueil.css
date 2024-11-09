@@ -277,7 +277,7 @@ h4 {
 .contact-description {
   font-size: 1.1rem;
   margin-bottom: 30px;
-  color: #b3b3b3;
+  color: #000000;
 }
 
 .contact-info {
@@ -293,7 +293,7 @@ h4 {
   align-items: center;
   gap: 10px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .contact-icon {

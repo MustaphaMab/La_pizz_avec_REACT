@@ -28,7 +28,7 @@
 .menu-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
-  color: #f27222; /* Couleur d’accent */
+  color: #f27222; 
   margin: 0;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .pizza-item {
-  background-color: #1a1a1a; /* Fond sombre pour la carte */
+  background-color: #1a1a1a; 
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   overflow: hidden;

@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import './accueil.css';
 
 function Accueil() {
@@ -18,7 +16,7 @@ function Accueil() {
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div>
 
       <section className="featured-pizzas">
         <h2>NOS PIZZAS VEDETTES</h2>
@@ -29,26 +27,27 @@ function Accueil() {
             { image: '/images/pizza3.jpg', title: 'Pizza Végétarienne', description: 'Poivrons, champignons, olives' },
           ].map((pizza, index) => (
             <div className="pizza-card" key={index}>
-              <img src={pizza.image} alt={pizza.title} />
+              <img src={pizza.image} alt={`Pizza ${pizza.title}`} />
               <h3>{pizza.title}</h3>
               <p>{pizza.description}</p>
             </div>
           ))}
         </div>
+        <button className="cta-button">Commander maintenant</button>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div>
 
       <section className="gallery">
-        <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
+        <h2>CONVIVIALITÉ ET BONNE AMBIANCE !</h2>
         <div className="gallery-grid">
           {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
-            <img src={img} alt={`Gallery ${idx + 1}`} key={idx} />
+            <img src={img} alt={`Bonne ambiance en salle ${idx + 1}`} key={idx} />
           ))}
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div>
 
       <section className="testimonials">
         <h2 className="testimonial-title">Ce que nos clients disent</h2>
@@ -66,7 +65,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
+      <div className="section-divider"></div>
 
       <section className="team">
         <h2>Rencontrez notre Équipe</h2>
@@ -86,12 +85,9 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation moderne */}
-
+      <div className="section-divider"></div>
     </div>
   );
 }
-
-
 
 export default Accueil;

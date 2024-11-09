@@ -31,6 +31,8 @@
 .contact-icon {
     color: #f27222;
     font-size: 1.2em;
+    width: 20px;
+    text-align: center;
 }
 
 .contact-form {
@@ -90,4 +92,12 @@
 
 .social-media a:hover {
     color: #e65d00;
+}
+
+@media (max-width: 600px) {
+    .contact-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+    }
 }

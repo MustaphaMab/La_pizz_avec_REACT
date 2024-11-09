@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
+
+import { ClipLoader } from 'react-spinners';
 import './menu.css';
 
 function Menu() {
     const [pizzas, setPizzas] = useState([]);
+    const [loading, setLoading] = useState(true);  // Ajout de l'état de chargement
 
     useEffect(() => {
         // Faites une requête GET à l'API de pizzas
-        fetch(`${process.env.REACT_APP_API_URL}/api/pizzas`) // Assurez-vous que l'URL correspond
+        fetch(`${process.env.REACT_APP_API_URL}/api/pizzas`) 
             .then(response => response.json())
-            .then(data => setPizzas(data))
-            .catch(error => console.error("Erreur lors de la récupération des pizzas:", error));
+            .then(data => {
+                setPizzas(data);
+                setLoading(false); // Une fois les données chargées, mettre loading à false
+            })
+            .catch(error => {
+                console.error("Impossible de charger les pizzas", error);
+                setLoading(false); // Même en cas d'erreur, on arrête le chargement
+            });
     }, []);
 
     return (
@@ -23,21 +32,27 @@ function Menu() {
                 </div>
             </section>
 
-            {/* Liste des pizzas */}
-            <div className="pizza-list">
-                {pizzas.map((pizza) => (
-                    <div key={pizza.id} className="pizza-item">
-                        
-                        <div className="pizza-info">
-                            <h2 className="pizza-name">{pizza.name}</h2>
-                            <p className="pizza-description">{pizza.description}</p>
-                            <p className="pizza-price">
-                                <FaPizzaSlice className="price-icon" /> {pizza.price} €
-                            </p>
+            {/* Indicateur de chargement */}
+            {loading ? (
+    <div className="loading-indicator">
+        <ClipLoader color="#f27222" loading={loading} size={50} />
+    </div>
+) : (
+                // Liste des pizzas une fois les données chargées
+                <div className="pizza-list">
+                    {pizzas.map((pizza) => (
+                        <div key={pizza.id} className="pizza-item">
+                            <div className="pizza-info">
+                                <h2 className="pizza-name">{pizza.name}</h2>
+                                <p className="pizza-description">{pizza.description}</p>
+                                <p className="pizza-price">
+                                    <FaPizzaSlice className="price-icon" /> {pizza.price} €
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

@@ -11,7 +11,6 @@ function Accueil() {
           <h1 className="main-title">LA PIZZ'A MOOS</h1>
           <h2>04 43 59 65 98</h2>
         </div>
-        <button className="cta-button">Commander maintenant</button>
       </section>
 
       <section className="about">

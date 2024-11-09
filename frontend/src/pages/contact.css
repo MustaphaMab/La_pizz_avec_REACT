@@ -1,103 +1,64 @@
-/* contact.css */
 .contact-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     color: #fff;
     background-color: #121212;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contact-description {
     text-align: center;
+  }
+  
+  .contact-description {
     font-size: 1.2em;
     margin-bottom: 20px;
-}
-
-.contact-info {
+  }
+  
+  .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 20px;
-}
-
-.contact-item {
+  }
+  
+  .contact-item {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.contact-icon {
+    font-size: 1.1em;
+  }
+  
+  .contact-item a {
+    color: #f27222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-item a:hover {
+    color: #e65d00;
+  }
+  
+  .contact-icon {
     color: #f27222;
     font-size: 1.2em;
     width: 20px;
     text-align: center;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.contact-form label {
-    font-weight: bold;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-}
-
-.contact-form button {
-    padding: 10px;
-    background-color: #f27222;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #e65d00;
-}
-
-.map-container {
+  }
+  
+  .map-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: 20px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.social-media a {
-    color: #f27222;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #e65d00;
-}
-
-@media (max-width: 600px) {
+  }
+  
+  @media (max-width: 600px) {
     .contact-item {
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
+      flex-direction: column;
+      text-align: left;
+      gap: 5px;
     }
-}
+  }
+  

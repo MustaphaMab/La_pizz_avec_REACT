@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import './accueil.css';
 
 function Accueil() {
@@ -9,6 +11,7 @@ function Accueil() {
           <h1 className="main-title">LA PIZZ'A MOOS</h1>
           <h2>04 43 59 65 98</h2>
         </div>
+        <button className="cta-button">Commander maintenant</button>
       </section>
 
       <section className="about">
@@ -16,7 +19,7 @@ function Accueil() {
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
       </section>
 
-      <div className="section-divider"></div>
+      <div className="section-divider"></div> {/* Séparation moderne */}
 
       <section className="featured-pizzas">
         <h2>NOS PIZZAS VEDETTES</h2>
@@ -33,13 +36,12 @@ function Accueil() {
             </div>
           ))}
         </div>
-        <button className="cta-button">Commander maintenant</button>
       </section>
 
-      <div className="section-divider"></div>
+      <div className="section-divider"></div> {/* Séparation moderne */}
 
       <section className="gallery">
-        <h2>CONVIVIALITÉ ET BONNE AMBIANCE !</h2>
+        <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
         <div className="gallery-grid">
           {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
             <img src={img} alt={`Bonne ambiance en salle ${idx + 1}`} key={idx} />
@@ -47,7 +49,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div>
+      <div className="section-divider"></div> {/* Séparation moderne */}
 
       <section className="testimonials">
         <h2 className="testimonial-title">Ce que nos clients disent</h2>
@@ -65,7 +67,7 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div>
+      <div className="section-divider"></div> {/* Séparation moderne */}
 
       <section className="team">
         <h2>Rencontrez notre Équipe</h2>
@@ -85,9 +87,12 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div>
+      <div className="section-divider"></div> {/* Séparation moderne */}
+
     </div>
   );
 }
+
+
 
 export default Accueil;

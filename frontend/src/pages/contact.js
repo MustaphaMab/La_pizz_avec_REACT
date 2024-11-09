@@ -1,25 +1,18 @@
 import React from "react";
-import {
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaClock,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaClock } from "react-icons/fa";
 
 function Contact() {
   return (
     <div className="contact-container">
       <h1>Contactez-nous</h1>
-      <p className="contact-description">Pour toute demande.
-  
-        Vous pouvez nous contacter directement via les coordonnées ci-dessous.
+      <p className="contact-description">
+        Pour toute demande, vous pouvez nous contacter directement via les coordonnées ci-dessous.
       </p>
 
-      {/* Informations de contact */}
       <div className="contact-info">
         <div className="contact-item">
           <FaPhoneAlt className="contact-icon" />
-          <span>Téléphone : 01 23 45 67 89</span>
+          <span><a href="tel:+33123456789">Téléphone : 01 23 45 67 89</a></span>
         </div>
         <div className="contact-item">
           <FaMapMarkerAlt className="contact-icon" />
@@ -27,7 +20,7 @@ function Contact() {
         </div>
         <div className="contact-item">
           <FaEnvelope className="contact-icon" />
-          <span>Email : contact@lapizz.com</span>
+          <span><a href="mailto:contact@lapizz.com">Email : contact@lapizz.com</a></span>
         </div>
         <div className="contact-item">
           <FaClock className="contact-icon" />
@@ -35,13 +28,12 @@ function Contact() {
         </div>
       </div>
 
-      {/* Carte Google Maps */}
       <div className="map-container">
         <iframe
           title="La Pizz' Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5810.240266556617!2d5.393326575423885!3d43.269858971122886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b8a778a71c19%3A0xf30ae56cc3f4dc1e!2sOrange%20V%C3%A9lodrome!5e0!3m2!1sfr!2sfr!4v1730838084026!5m2!1sfr!2sfr"
           width="100%"
-          height="100%"
+          height="300px"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"

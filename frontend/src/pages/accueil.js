@@ -29,7 +29,7 @@ function Accueil() {
             { image: '/images/pizza3.jpg', title: 'Pizza Végétarienne', description: 'Poivrons, champignons, olives' },
           ].map((pizza, index) => (
             <div className="pizza-card" key={index}>
-              <img src={pizza.image} alt={`Pizza ${pizza.title}`} />
+              <img src={pizza.image} alt={`Pizza ${pizza.title}`} loading="lazy" />
               <h3>{pizza.title}</h3>
               <p>{pizza.description}</p>
             </div>

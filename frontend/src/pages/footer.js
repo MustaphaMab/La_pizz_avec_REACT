@@ -5,15 +5,15 @@ import './footer.css';
 function Footer() {
     return (
         <footer className="footer">
-            <p>&copy; 2024 La Pizz' à Moos - Tous droits réservés. “Site fictif pour présentation.”</p>
+            <p>&copy; 2024 La Pizz' - Tous droits réservés.</p>
             <div className="social-icons">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Facebook">
                     <FaFacebookF />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Twitter">
                     <FaTwitter />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Instagram">
                     <FaInstagram />
                 </a>
             </div>

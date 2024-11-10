@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import './header.css';
+import "./header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth > 768) {
-      setMenuOpen(false); 
+      setMenuOpen(false);
     }
   };
 
@@ -24,10 +24,18 @@ function Header() {
   return (
     <header className="header">
       <div className="nav-container">
-        <img src="/images/logo_pizza.jpg" alt="Logo Pizza" className="header-logo" />
+        <img
+          src="/images/logo_pizza.jpg"
+          alt="Logo Pizza"
+          className="header-logo"
+        />
 
         {/* Icône burger avec animation */}
-        <button className={`burger-icon ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+        <button
+          className={`burger-icon ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="bouton menu burger"
+        >
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
@@ -35,10 +43,24 @@ function Header() {
 
         {/* Liens de navigation */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li><Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link></li>
-          <li><Link to="/menu" onClick={() => setMenuOpen(false)}>Nos pizza</Link></li>
-          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-          <li style={{ color: "#f27222", fontWeight: "bold" }}>04 42 59 65 98</li>
+          <li>
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              Accueil
+            </Link>
+          </li>
+          <li>
+            <Link to="/menu" onClick={() => setMenuOpen(false)}>
+              Nos pizza
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
+          </li>
+          <li style={{ color: "#f27222", fontWeight: "bold" }}>
+            04 42 59 65 98
+          </li>
         </ul>
       </div>
     </header>

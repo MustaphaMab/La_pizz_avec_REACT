@@ -9,7 +9,6 @@ function Accueil() {
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
         <div className="banner-overlay">
           <h1 className="main-title">LA PIZZ'A MOOS</h1>
-          <h2>04 43 59 65 98</h2>
         </div>
       </section>
 

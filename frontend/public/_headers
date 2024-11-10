@@ -1,0 +1,7 @@
+/*
+  Content-Security-Policy: 
+    default-src 'self'; 
+    script-src 'self' https://www.googletagmanager.com; 
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com;
+*/

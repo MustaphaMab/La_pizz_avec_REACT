@@ -26,7 +26,8 @@ Ce projet est un site vitrine fictif pour une pizzeria, développé avec un **ba
 
 1. **Cloner le projet** :
    
-   git clone https://github.com/MustaphaMab/La_pizz.git
+   Clonez ce projet depuis [GitHub](https://github.com/MustaphaMab/La_pizz.git).
+
    cd La_pizz
    
 2. Installer les dépendances pour le backend :
@@ -41,13 +42,6 @@ Copier le code
 cd ../frontend
 npm install
 
-Démarrage en Mode Développement
-Pour lancer le projet en mode développement avec le backend et le frontend en parallèle, exécutez la commande suivante depuis la racine du projet :
-
-Copier le code
-npm run dev
-Frontend : accessible sur http://localhost:3000
-Backend : accessible sur http://localhost:5000
 
 Contribuer
 Les contributions sont les bienvenues ! Voici comment procéder :

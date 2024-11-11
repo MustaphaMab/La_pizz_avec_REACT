@@ -1,25 +1,99 @@
-/* menu.css */
+
+.menu-container {
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Bannière de présentation */
+.menu-banner {
+  
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.banner-overlay {
+  
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.menu-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: #f27222; 
+  margin: 0;
+}
+
+.menu-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Styles pour les cartes de pizzas */
 .pizza-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .pizza-item {
-    border: 1px solid #ddd;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    text-align: center;
-  }
-  
-  .pizza-item h2 {
-    font-size: 1.2em;
-    margin: 0.5em 0;
-  }
-  
-  .pizza-item p {
-    margin: 0.2em 0;
-  }
-  
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.pizza-item {
+  background-color: #1a1a1a; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pizza-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pizza-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pizza-info {
+  padding: 16px;
+}
+
+.pizza-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #f27222;
+  margin: 0.5em 0;
+}
+
+.pizza-description {
+  font-size: 0.9rem;
+  margin: 0.5em 0;
+  color: #cccccc;
+}
+
+.pizza-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price-icon {
+  color: #f27222;
+  font-size: 1.3rem;
+}

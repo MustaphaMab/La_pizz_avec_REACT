@@ -1,128 +1,314 @@
-/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  /* Section Parallaxe */
-  .banner {
-  
-    
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-  }
-  
-  .banner h1 {
-    font-size: 2.5em;
-    margin: 0;
-  }
-  
-  .banner p {
-    font-size: 1.2em;
-    margin-top: 10px;
-  }
-  
-  /* Section À Propos */
-  .about {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-  }
-  
-  .about h2 {
-    font-size: 2.2em;
-    color: #fc8c2d;
-  }
-  
-  .about p {
-    font-size: 1.1em;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  
-  /* Section Pizzas Vedettes */
-  .featured-pizzas {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .featured-pizzas h2 {
-    font-size: 2.2em;
-    color: #fc8c2d;
-    margin-bottom: 20px;
-  }
-  
-  .pizza-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .pizza-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 220px;
-    text-align: center;
-  }
-  
-  .pizza-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .pizza-card h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #fc8c2d;
-  }
-  
-  .pizza-card p {
-    font-size: 0.9em;
-    margin-bottom: 15px;
-  }
-  
-  /* Section Contact */
-  .contact-section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f8f8f8;
-  }
-  
-  .contact-section h2 {
-    font-size: 2.2em;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .contact-section p {
-    font-size: 1.1em;
-    max-width: 600px;
-    margin: 0 auto 20px;
-  }
-  
-  .contact-button {
-    padding: 10px 20px;
-    background-color: #fc8c2d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-button:hover {
-    background-color: #e07622;
-  }
-  
+  margin: 20px; 
+  background-color: #f0f0f0; 
+}
+
+/* séparation entre les sections */
+.section-divider {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 105, 135, 1), rgba(253, 200, 48, 1));
+  margin: 40px auto; 
+  border-radius: 8px;
+}
+
+/* Montserrat pour les titres */
+.main-title, h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Appliquer Roboto pour le texte principal */
+body, .accueil {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+}
+
+.p {
+font-size: 125%;
+}
+
+
+/* Styles globaux */
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  width: auto;
+  padding: 80px;
+  text-align: center;
+  color: white;
+}
+
+.banner {
+  width: 100%;
+  height: 60vh; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 20px; 
+  overflow: hidden;
+}
+
+
+.cta-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff4757;
+  transform: scale(1.05);
+}
+
+/* Pizzas Vedettes */
+.pizza-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.pizza-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: #000;
+}
+
+.pizza-card img {
+  width: 100%;
+  height: 100;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.pizza-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Témoignages */
+.testimonial-title {
+  text-align: center;
+  color: #ffffff; 
+  font-size: 150%;
+  padding-bottom: 20px;
+}
+
+.testimonial-card p, .testimonial-card h4 {
+  color: #ffffff; 
+  text-align: center;
+}
+/* Équipe */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  padding: 20px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; 
+  max-width: 800px; 
+  margin-top: 20px;
+}
+
+.team-member {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 135%;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #873838;
+  font-size: 150%;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 135%;
+}
+
+/* Fond noir pour toute la page */
+.accueil {
+  padding-top: 20px; 
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Bannière */
+.main-title {
+  font-size: 3.5rem; 
+}
+
+/* Section À Propos */
+.about {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  text-align: center;
+}
+
+.about p {
+  width: 100%;
+}
+
+/* Section Contact */
+.contact-section {
+  background-color: #1f1f1f; 
+  padding: 40px 20px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #b3b3b3;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.contact-icon {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+/* Section Contact */
+.contact-section {
+  background-color: #1f1f1f; 
+  padding: 40px 20px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.contact-icon {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.875rem;
+  margin-top: 10px;
+}

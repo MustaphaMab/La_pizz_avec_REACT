@@ -22,16 +22,15 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "https://www.googletagmanager.com"],
-        scriptSrcElem: ["'self'", "https://www.googletagmanager.com"],
         styleSrc: ["'self'", "https://fonts.googleapis.com"],
-        styleSrcElem: ["'self'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
         imgSrc: ["'self'", "https://example.com"],  // Remplacez 'example.com' si d'autres images externes sont utilisées
-        connectSrc: ["'self'", "https://la-pizz.onrender.com"],
+        connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Ajoutez ici l'URL de votre backend
       },
     },
   })
 );
+
 
 // Route pour approuver un commentaire
 app.put(

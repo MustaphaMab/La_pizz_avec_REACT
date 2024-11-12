@@ -15,25 +15,6 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const SECRET_KEY = "votre_cle_secrete";
 
-// Middleware de sécurité avec Helmet
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://www.googletagmanager.com", "'unsafe-inline'"],
-        styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
-        fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        connectSrc: ["'self'", "https://la-pizz.onrender.com"],
-      },
-    },
-  })
-);
-
-
-
-
-
 
 // Route pour approuver un commentaire
 app.put(

@@ -21,17 +21,17 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://www.googletagmanager.com"],
-        scriptSrcElem: ["'self'", "https://www.googletagmanager.com"], // Pour permettre les scripts spécifiques comme GTM
-        styleSrc: ["'self'", "https://fonts.googleapis.com"],
-        styleSrcElem: ["'self'", "https://fonts.googleapis.com"], // Pour les styles externes Google Fonts
+        scriptSrc: ["'self'", "https://www.googletagmanager.com", "'unsafe-inline'"],
+        styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "https://example.com"], // Remplacez 'example.com' si d'autres images externes sont nécessaires
-        connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Backend
+        connectSrc: ["'self'", "https://la-pizz.onrender.com"],
       },
     },
   })
 );
+
+
+
 
 
 

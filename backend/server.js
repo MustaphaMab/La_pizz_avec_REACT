@@ -16,16 +16,19 @@ const PORT = process.env.PORT || 5001;
 const SECRET_KEY = "votre_cle_secrete";
 
 // Middleware de sécurité avec Helmet
-app.use(helmet());
 app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "https://www.googletagmanager.com"],
-      styleSrc: ["'self'", "https://fonts.googleapis.com"],
-      imgSrc: ["'self'", "https://example.com"], // Ajustez selon les besoins
-      connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Ajustez selon vos URL d'API
-      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "https://www.googletagmanager.com"],
+        scriptSrcElem: ["'self'", "https://www.googletagmanager.com"],
+        styleSrc: ["'self'", "https://fonts.googleapis.com"],
+        styleSrcElem: ["'self'", "https://fonts.googleapis.com"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        imgSrc: ["'self'", "https://example.com"],  // Remplacez 'example.com' si d'autres images externes sont utilisées
+        connectSrc: ["'self'", "https://la-pizz.onrender.com"],
+      },
     },
   })
 );

@@ -5,7 +5,7 @@ import './footer.css';
 function Footer() {
     return (
         <footer className="footer">
-            <p>&copy; 2024 La Pizz' - Tous droits réservés.</p>
+            <p>&copy; 2024 La Pizz' - Tous droits réservés. Site fictif.</p>
             <div className="social-icons">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Facebook">
                     <FaFacebookF />

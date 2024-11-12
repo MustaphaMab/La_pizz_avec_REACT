@@ -38,10 +38,6 @@ app.put(
   }
 );
 
-// Démarrage du serveur
-app.listen(PORT, () => {
-  console.log(`Serveur d'API en cours sur le port ${PORT}`);
-});
 
 function authenticateToken(req, res, next) {
   const token =

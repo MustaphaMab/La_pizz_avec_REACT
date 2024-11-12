@@ -5,6 +5,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 
 const Comment = require("./models/Comment");
 const Message = require("./models/Message");
@@ -13,6 +14,26 @@ const Message = require("./models/Message");
 const app = express();
 const PORT = process.env.PORT || 5001;
 const SECRET_KEY = "votre_cle_secrete";
+
+// Middleware de sécurité avec Helmet
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "https://www.googletagmanager.com"],
+        scriptSrcElem: ["'self'", "https://www.googletagmanager.com"], // Pour permettre les scripts spécifiques comme GTM
+        styleSrc: ["'self'", "https://fonts.googleapis.com"],
+        styleSrcElem: ["'self'", "https://fonts.googleapis.com"], // Pour les styles externes Google Fonts
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        imgSrc: ["'self'", "https://example.com"], // Remplacez 'example.com' si d'autres images externes sont nécessaires
+        connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Backend
+      },
+    },
+  })
+);
+
+
 
 // Route pour approuver un commentaire
 app.put(
@@ -38,10 +59,6 @@ app.put(
   }
 );
 
-// Démarrage du serveur
-app.listen(PORT, () => {
-  console.log(`Serveur d'API en cours sur le port ${PORT}`);
-});
 
 function authenticateToken(req, res, next) {
   const token =

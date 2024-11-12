@@ -5,6 +5,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 
 const Comment = require("./models/Comment");
 const Message = require("./models/Message");
@@ -13,6 +14,21 @@ const Message = require("./models/Message");
 const app = express();
 const PORT = process.env.PORT || 5001;
 const SECRET_KEY = "votre_cle_secrete";
+
+// Middleware de sécurité avec Helmet
+app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://www.googletagmanager.com"],
+      styleSrc: ["'self'", "https://fonts.googleapis.com"],
+      imgSrc: ["'self'", "https://example.com"], // Ajustez selon les besoins
+      connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Ajustez selon vos URL d'API
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+    },
+  })
+);
 
 // Route pour approuver un commentaire
 app.put(

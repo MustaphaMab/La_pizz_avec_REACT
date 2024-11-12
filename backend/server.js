@@ -21,17 +21,15 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://www.googletagmanager.com", "'sha256-aGAgMgsILz7siw/6YK3WulOBxarFqAHdxCFv7lgO1Xs='"], // hash du script inline
-        scriptSrcElem: ["'self'", "https://www.googletagmanager.com"],
-        styleSrc: ["'self'", "https://fonts.googleapis.com", "'sha256-dH+oOZOdDv+MWU0F8bCZOoFHX0jFM4+bwNqOKujbv90='"], // hash du style inline
-        styleSrcElem: ["'self'", "https://fonts.googleapis.com"],
+        scriptSrc: ["'self'", "https://www.googletagmanager.com", "'unsafe-inline'"],
+        styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "https://example.com"],  // Remplacez 'example.com' si vous utilisez des images externes
-        connectSrc: ["'self'", "https://la-pizz.onrender.com"], // Votre backend
+        connectSrc: ["'self'", "https://la-pizz.onrender.com"],
       },
     },
   })
 );
+
 
 
 

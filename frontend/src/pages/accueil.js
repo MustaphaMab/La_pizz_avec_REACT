@@ -14,8 +14,9 @@ function Accueil() {
       </section>
 
       <section className="about">
-        <p><strong>LIVRAISON GRATUITE</strong></p>
+        <p><strong>LIVRAISON GRATUITE JUSQU'A VITROLLES</strong></p>
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
+        <p><strong>UNIQUE A MARSEILLE</strong></p>
       </section>
 
       <div className="section-divider"></div> {/* Séparation */}

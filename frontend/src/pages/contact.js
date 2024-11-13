@@ -26,7 +26,7 @@ function Contact() {
           <div className="contact-item">
             <FaPhoneAlt className="contact-icon" />
             <span>
-              <a href="tel:+33123456789">Téléphone : 01 23 45 67 89</a>
+              <a href="tel:+33123456789">Téléphone : 04 91 12 34 560</a>
             </span>
           </div>
 

@@ -1,6 +1,6 @@
 .contact-container {
   background-color: #121212;
-  color: #ffffff;
+  color: #ffffff; 
   padding: 20px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -9,57 +9,57 @@
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
-  color: #f27222;
+  color: #ffffff;
 }
 
-  .contact-description {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-  
-  .container-contact{
-    color: #ffffff;
-  }
+.contact-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.1em;
-  }
-  
-  .contact-item a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-item a:hover {
-    color: #e65d00;
-  }
-  
-  .contact-icon {
-    color: #f27222;
-    font-size: 1.2em;
-    width: 20px;
-    text-align: center;
-  }
-  
-  .map-container {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #ffffff; 
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  color: #ffffff; 
+}
+
+.contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #e0e0e0; 
+}
+
+.contact-icon {
+  color: #ffffff; 
+  font-size: 1.2em;
+  width: 20px;
+  text-align: center;
+}
+
+.map-container {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
   
   @media (max-width: 600px) {
     .contact-item {

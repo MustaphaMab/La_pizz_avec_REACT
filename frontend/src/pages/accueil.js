@@ -1,11 +1,12 @@
 import React from 'react';
 
-
 import './accueil.css';
 
+// Composant de la page d'accueil
 function Accueil() {
   return (
     <div className="accueil">
+      {/* Bannière avec image de fond et informations principales */}
       <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
         <div className="banner-overlay">
           <h1 className="main-title">LA PIZZ'A MOOS</h1>
@@ -13,14 +14,17 @@ function Accueil() {
         </div>
       </section>
 
+      {/* Section présentant les points forts du restaurant */}
       <section className="about">
         <p><strong>LIVRAISON GRATUITE JUSQU'A VITROLLES</strong></p>
         <p><strong>CUITES AU FEU DE BOIS</strong></p>
         <p><strong>UNIQUE A MARSEILLE</strong></p>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation */}
+      {/* Séparateur entre les sections */}
+      <div className="section-divider"></div> 
 
+      {/* Section mettant en avant des pizzas populaires */}
       <section className="featured-pizzas">
         <h2>NOS PIZZAS VEDETTES</h2>
         <div className="pizza-cards">
@@ -38,8 +42,10 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation */}
+      {/* Séparateur entre les sections */}
+      <div className="section-divider"></div> 
 
+      {/* Galerie d'images pour montrer l'ambiance du restaurant */}
       <section className="gallery">
         <h2>CONVIVIALITE ET BONNE AMBIANCE !</h2>
         <div className="gallery-grid">
@@ -49,8 +55,10 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation */}
+      {/* Séparateur entre les sections */}
+      <div className="section-divider"></div> 
 
+      {/* Témoignages de clients */}
       <section className="testimonials">
         <h2 className="testimonial-title">Ce que nos clients disent</h2>
         <div className="testimonial-cards">
@@ -67,8 +75,10 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation */}
+      {/* Séparateur entre les sections */}
+      <div className="section-divider"></div> 
 
+      {/* Section présentant les membres de l'équipe */}
       <section className="team">
         <h2>Rencontrez notre Équipe</h2>
         <p>Notre équipe dédiée travaille avec passion pour vous offrir le meilleur service.</p>
@@ -87,12 +97,10 @@ function Accueil() {
         </div>
       </section>
 
-      <div className="section-divider"></div> {/* Séparation*/}
-
+      {/* Séparateur final */}
+      <div className="section-divider"></div>
     </div>
   );
 }
-
-
 
 export default Accueil;

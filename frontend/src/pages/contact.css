@@ -25,6 +25,10 @@ h1 {
     color: #ffffff;
   }
   
+  .container-contact{
+    color: #ffffff;
+  }
+
   .contact-item {
     display: flex;
     align-items: center;
@@ -33,7 +37,6 @@ h1 {
   }
   
   .contact-item a {
-    color: #f27222;
     text-decoration: none;
     transition: color 0.3s ease;
   }

@@ -15,6 +15,17 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const SECRET_KEY = "votre_cle_secrete";
 
+// Utilisation de Helmet pour gérer la sécurité
+app.use(helmet());
+
+// Configurer la politique de sécurité de contenu (CSP) pour autoriser Google Analytics
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    connectSrc: ["'self'", "https://la-pizz.onrender.com", "https://region1.google-analytics.com"]
+  }
+}));
+
 
 // Route pour approuver un commentaire
 app.put(

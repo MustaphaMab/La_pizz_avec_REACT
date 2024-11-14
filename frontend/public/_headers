@@ -1,1 +1,13 @@
-Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://la-pizz.onrender.com
+  Content-Security-Policy: 
+    default-src 'self';
+    img-src 'self' https://www.googletagmanager.com;
+    script-src 'self' https://www.googletagmanager.com 'sha256-VmICmQBycI90LV6KjhRkMzoV16bvoHIlpotSi7Pxxsc=';
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://la-pizz.onrender.com https://region1.google-analytics.com;
+    frame-src 'self' https://www.google.com https://www.googletagmanager.com;
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self), microphone=(), camera=()

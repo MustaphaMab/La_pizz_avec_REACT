@@ -3,6 +3,7 @@
     default-src 'self';
     script-src 'self' https://www.googletagmanager.com 'sha256-VmICmQBycI90LV6KjhRkMzoV16bvoHIlpotSi7Pxxsc=';
     style-src 'self' https://fonts.googleapis.com https://www.googletagmanager.com 'unsafe-inline';
+    style-src-elem 'self' https://fonts.googleapis.com https://www.googletagmanager.com 'unsafe-inline';
     font-src 'self' https://fonts.gstatic.com;
     connect-src 'self' https://la-pizz.onrender.com https://www.googletagmanager.com https://region1.google-analytics.com https://www.google-analytics.com;
     img-src 'self' https://www.googletagmanager.com;

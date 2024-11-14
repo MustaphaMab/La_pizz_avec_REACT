@@ -1,3 +1,4 @@
+
   Content-Security-Policy: 
     default-src 'self';
     script-src 'self' https://www.googletagmanager.com 'sha256-VmICmQBycI90LV6KjhRkMzoV16bvoHIlpotSi7Pxxsc=';

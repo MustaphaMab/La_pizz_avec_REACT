@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  // Styles nécessaires pour AOS
-import './Accueil.css';  // Assurez-vous d'avoir un fichier CSS pour le style
+import './accueil.css';  // Assurez-vous d'avoir un fichier CSS pour le style
 
 const Accueil = () => {
   useEffect(() => {

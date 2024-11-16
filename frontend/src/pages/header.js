@@ -50,7 +50,7 @@ function Header() {
           </li>
           <li>
             <Link to="/menu" onClick={() => setMenuOpen(false)}>
-              Nos pizza
+              Nos Pizzas
             </Link>
           </li>
           <li>

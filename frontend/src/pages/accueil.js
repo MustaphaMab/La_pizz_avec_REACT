@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';  // Styles nécessaires pour AOS
-import './accueil.css';  // Assurez-vous d'avoir un fichier CSS pour le style
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Styles nécessaires pour AOS
+import "./accueil.css"; // Assurez-vous d'avoir un fichier CSS pour le style
+import { Link } from 'react-router-dom';
 
 const Accueil = () => {
   useEffect(() => {
@@ -12,23 +13,48 @@ const Accueil = () => {
     <>
       {/* Meta Tags pour le SEO */}
       <head>
-        <meta name="keywords" content="pizzeria, pizza, Marseille, livraison gratuite, feu de bois, pizzas authentiques" />
+        <meta
+          name="keywords"
+          content="pizzeria, pizza, Marseille, livraison gratuite, feu de bois, pizzas authentiques"
+        />
         <meta name="author" content="La Pizz'A Moos" />
-        <meta name="description" content="La Pizz'A Moos - Pizzeria à Marseille, livraison gratuite et pizzas cuites au feu de bois." />
-        <meta property="og:title" content="La Pizz'A Moos - Pizzeria à Marseille" />
-        <meta property="og:description" content="Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!" />
+        <meta
+          name="description"
+          content="La Pizz'A Moos - Pizzeria à Marseille, livraison gratuite et pizzas cuites au feu de bois."
+        />
+        <meta
+          property="og:title"
+          content="La Pizz'A Moos - Pizzeria à Marseille"
+        />
+        <meta
+          property="og:description"
+          content="Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!"
+        />
         <meta property="og:image" content="/path/to/logo.jpg" />
         <meta name="robots" content="index, follow" />
       </head>
 
-
-
       {/* Section Bannière */}
-      <section className="banner" style={{ backgroundImage: 'url(/images/banniere.jpg)' }}>
+      <section
+        className="banner"
+        style={{ backgroundImage: "url(/images/banniere.jpg)" }}
+      >
         <div className="banner-overlay">
-          <h1 className="main-title" data-aos="fade-up">Bienvenue chez La Pizz'A Moos</h1>
-          <p className="cta" data-aos="fade-up" data-aos-delay="200">Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!</p>
-          <a href="/menu.js" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Voir nos Pizzas</a>
+          <h1 className="main-title" data-aos="fade-up">
+            Bienvenue chez La Pizz'A Moos
+          </h1>
+          <p className="cta" data-aos="fade-up" data-aos-delay="200">
+            Savourez nos pizzas authentiques cuites au feu de bois. Livraison
+            gratuite à Marseille!
+          </p>
+          <Link
+            to="/menu"
+            className="cta-button"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            Voir nos Pizzas
+          </Link>
         </div>
       </section>
 
@@ -38,7 +64,11 @@ const Accueil = () => {
       {/* Section À propos */}
       <section className="about" data-aos="fade-up">
         <h2>À propos de La Pizz'A Moos</h2>
-        <p>Notre pizzeria offre une expérience unique à Marseille. Toutes nos pizzas sont cuites au feu de bois pour un goût exceptionnel. Nous vous proposons une livraison gratuite dans toute la ville.</p>
+        <p>
+          Notre pizzeria offre une expérience unique à Marseille. Toutes nos
+          pizzas sont cuites au feu de bois pour un goût exceptionnel. Nous vous
+          proposons une livraison gratuite dans toute la ville.
+        </p>
       </section>
 
       {/* Section Menu */}
@@ -79,11 +109,21 @@ const Accueil = () => {
         <h2>Ce que nos clients disent</h2>
         <div className="testimonial-cards">
           <div className="testimonial-card" data-aos="zoom-in">
-            <p>"Les meilleures pizzas que j'ai jamais mangées ! La pâte est parfaite et la livraison rapide."</p>
+            <p>
+              "Les meilleures pizzas que j'ai jamais mangées ! La pâte est
+              parfaite et la livraison rapide."
+            </p>
             <h4>— Marc D.</h4>
           </div>
-          <div className="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
-            <p>"Un véritable délice. Une expérience culinaire unique à Marseille."</p>
+          <div
+            className="testimonial-card"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <p>
+              "Un véritable délice. Une expérience culinaire unique à
+              Marseille."
+            </p>
             <h4>— Sophie L.</h4>
           </div>
         </div>
@@ -114,7 +154,10 @@ const Accueil = () => {
       {/* Section Contact */}
       <section className="contact-section">
         <h2 className="contact-title">Contactez-nous</h2>
-        <p className="contact-description">Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter !</p>
+        <p className="contact-description">
+          Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à
+          nous contacter !
+        </p>
         <div className="contact-info">
           <div className="contact-item">
             <i className="contact-icon fas fa-phone"></i>

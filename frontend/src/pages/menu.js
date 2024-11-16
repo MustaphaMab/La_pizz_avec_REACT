@@ -37,7 +37,7 @@ function Menu() {
                 <meta name="description" content="Découvrez notre menu de pizzas artisanales, préparées avec des ingrédients frais et de qualité." />
                 <meta property="og:title" content="Notre Menu | La Pizza Moos" />
                 <meta property="og:description" content="Explorez notre sélection de pizzas artisanales. Commandez dès maintenant !" />
-                <meta property="og:image" content="/path/to/banner-image.jpg" />
+
                 <meta property="og:url" content="https://www.la-pizza-moos.com/menu" />
             </Helmet>
 

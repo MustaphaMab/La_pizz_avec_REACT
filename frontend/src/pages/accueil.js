@@ -7,7 +7,7 @@ function Accueil() {
   return (
     <div className="accueil">
       {/* Bannière avec image de fond et informations principales */}
-      <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
+      <section className="banner" style={{ backgroundImage: "url('./images/banniere.jpg')" }}>
         <div className="banner-overlay">
           <h1 className="main-title">LA PIZZ'A MOOS</h1>
           <h2>04 91 12 34 560</h2>

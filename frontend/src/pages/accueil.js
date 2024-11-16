@@ -1,89 +1,109 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Accueil.css"; // Import du fichier CSS associé
+import React from 'react';
+import './accueil.css';
+import { Helmet } from 'react-helmet';
 
-const Accueil = () => {
+function Accueil() {
   return (
-    <div className="accueil-container">
-      {/* Section de la bannière principale */}
-      <header className="banniere">
-        <div className="overlay">
-          <h1>Bienvenue chez La Pizz'a Moos</h1>
-          <p>Des pizzas artisanales faites avec amour à Marseille</p>
-          <Link to="/menu" className="btn-primary">
-            Voir notre menu
-          </Link>
-        </div>
+    <div className="accueil">
+      {/* SEO: Balises pour les moteurs de recherche */}
+      <Helmet>
+        <title>La Pizz'A Moos - Pizzas Authentiques à Marseille</title>
+        <meta name="description" content="Découvrez La Pizz'A Moos, votre pizzeria à Marseille avec des pizzas cuites au feu de bois, livraison gratuite et une ambiance conviviale." />
+        <meta property="og:title" content="La Pizz'A Moos - Pizzas Authentiques à Marseille" />
+        <meta property="og:description" content="Venez goûter nos pizzas vedettes cuites au feu de bois à Marseille. Livraison gratuite !" />
+        <meta property="og:image" content="/images/banniere.jpg" />
+        <meta property="og:url" content="https://www.la-pizza-moos.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
+      <header>
+        {/* Bannière */}
+        <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
+          <div className="banner-overlay">
+            <h1 className="main-title">LA PIZZ'A MOOS</h1>
+            <h2>04 91 12 34 560</h2>
+          </div>
+        </section>
       </header>
 
-      {/* Section sur les points forts */}
-      <section className="points-forts">
-        <h2>Pourquoi choisir La Pizz'a Moos ?</h2>
-        <div className="features">
-          <div className="feature">
-            <img src="/images/ingredients-frais.jpg" alt="Ingrédients frais" />
-            <h3>Ingrédients frais</h3>
-            <p>Nos pizzas sont préparées avec les meilleurs ingrédients locaux.</p>
-          </div>
-          <div className="feature">
-            <img src="/images/livraison-rapide.jpg" alt="Livraison rapide" />
-            <h3>Livraison rapide</h3>
-            <p>Profitez de nos pizzas artisanales directement chez vous en moins de 30 minutes.</p>
-          </div>
-          <div className="feature">
-            <img src="/images/menu-varie.jpg" alt="Menu varié" />
-            <h3>Menu varié</h3>
-            <p>Des pizzas classiques aux créations originales, il y en a pour tous les goûts.</p>
-          </div>
-        </div>
-      </section>
+      <main>
+        {/* Section "À propos" */}
+        <section className="about">
+          <p><strong>LIVRAISON GRATUITE DANS MARSEILLE</strong></p>
+          <p><strong>CUITES AU FEU DE BOIS POUR UN GOÛT EXCEPTIONNEL</strong></p>
+          <p><strong>UNIQUE ET AUTHENTIQUE À MARSEILLE</strong></p>
+        </section>
 
-      {/* Section de l'équipe */}
-      <section className="equipe">
-        <h2>Rencontrez notre équipe</h2>
-        <div className="membres">
-          <div className="membre">
-            <img src="/images/chef-pizza.jpg" alt="Chef Pizzaïolo" />
-            <h3>Marco Rossi</h3>
-            <p>Notre maître pizzaïolo avec 15 ans d'expérience dans la création de pizzas authentiques.</p>
+        {/* Pizzas vedettes */}
+        <section className="featured-pizzas">
+          <h2>NOS PIZZAS VEDETTES</h2>
+          <div className="pizza-cards">
+            {[
+              { image: '/images/pizza1.jpg', title: 'Pizza Margherita', description: 'Tomate, mozzarella, basilic' },
+              { image: '/images/pizza2.jpg', title: 'Pizza Saumon', description: 'Crème, saumon, mozzarella' },
+              { image: '/images/pizza3.jpg', title: 'Pizza Végétarienne', description: 'Poivrons, champignons, olives' },
+            ].map((pizza, index) => (
+              <div className="pizza-card" key={index}>
+                <img src={pizza.image} alt={`Photo de ${pizza.title}`} loading="lazy" />
+                <h3>{pizza.title}</h3>
+                <p>{pizza.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="membre">
-            <img src="/images/serveur.jpg" alt="Serveur" />
-            <h3>Clara Dupont</h3>
-            <p>Clara s'assure que chaque client est accueilli avec un sourire chaleureux et un service exceptionnel.</p>
-          </div>
-          <div className="membre">
-            <img src="/images/livreur.jpg" alt="Livreur" />
-            <h3>Amine Khelifa</h3>
-            <p>Amine est notre super livreur, toujours prêt à livrer vos pizzas en un temps record.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Section des témoignages */}
-      <section className="temoignages">
-        <h2>Ce que disent nos clients</h2>
-        <div className="avis">
-          <blockquote>
-            "La meilleure pizzeria de Marseille ! Les ingrédients sont toujours frais et le goût est incroyable."
-            <span>- Sarah L.</span>
-          </blockquote>
-          <blockquote>
-            "Livraison rapide et service au top. Je commande toutes les semaines, jamais déçu !"
-            <span>- Jean P.</span>
-          </blockquote>
-        </div>
-      </section>
+        {/* Galerie */}
+        <section className="gallery">
+          <h2>CONVIVIALITÉ ET BONNE AMBIANCE !</h2>
+          <div className="gallery-grid">
+            {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
+              <img src={img} alt={`Ambiance chaleureuse dans notre restaurant ${idx + 1}`} key={idx} loading="lazy" />
+            ))}
+          </div>
+        </section>
 
-      {/* Section appel à l'action */}
-      <section className="cta">
-        <h2>Prêt à goûter à nos pizzas ?</h2>
-        <Link to="/contact" className="btn-secondary">
-          Contactez-nous
-        </Link>
-      </section>
+        {/* Témoignages */}
+        <section className="testimonials">
+          <h2>Ce que nos clients disent</h2>
+          <div className="testimonial-cards">
+            {[
+              { text: "“Les meilleures pizzas que j'ai jamais goûtées !”", author: 'Marie L.' },
+              { text: "“Une ambiance agréable et des pizzas de qualité.”", author: 'Julien P.' },
+              { text: "“Les saveurs sont incroyables, parfait pour une soirée entre amis.”", author: 'Sophie K.' },
+            ].map((testimonial, index) => (
+              <div className="testimonial-card" key={index}>
+                <p>{testimonial.text}</p>
+                <h4>{testimonial.author}</h4>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Équipe */}
+        <section className="team">
+          <h2>Rencontrez notre Équipe</h2>
+          <p>Notre équipe dédiée travaille avec passion pour vous offrir le meilleur service.</p>
+          <div className="team-members">
+            {[
+              { image: '/images/maitre_pizzaiolo.jpg', name: 'Chef Giovanni', role: 'Maître pizzaiolo avec 20 ans d\'expérience' },
+              { image: '/images/chef_salle.jpg', name: 'Lisa Martin', role: 'Responsable de salle' },
+              { image: '/images/serveur_restaurant.png', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
+            ].map((member, index) => (
+              <div className="team-member" key={index}>
+                <img src={member.image} alt={`Photo de ${member.name}`} loading="lazy" />
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2024 La Pizz'A Moos - Tous droits réservés.</p>
+      </footer>
     </div>
   );
-};
+}
 
 export default Accueil;

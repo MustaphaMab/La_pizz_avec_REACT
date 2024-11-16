@@ -44,7 +44,7 @@ function Accueil() {
               { image: '/images/pizza3.jpg', title: 'Pizza Végétarienne', description: 'Poivrons, champignons, olives' },
             ].map((pizza, index) => (
               <div className="pizza-card" key={index}>
-                <img src={pizza.image} alt={`Photo de ${pizza.title}`} loading="lazy" />
+                <img src={pizza.image} alt={` ${pizza.title}`} loading="lazy" />
                 <h3>{pizza.title}</h3>
                 <p>{pizza.description}</p>
               </div>
@@ -90,7 +90,7 @@ function Accueil() {
               { image: '/images/serveur_restaurant.png', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
             ].map((member, index) => (
               <div className="team-member" key={index}>
-                <img src={member.image} alt={`Photo de ${member.name}`} loading="lazy" />
+                <img src={member.image} alt={` ${member.name}`} loading="lazy" />
                 <h3>{member.name}</h3>
                 <p>{member.role}</p>
               </div>

@@ -16,9 +16,9 @@ function Accueil() {
 
       {/* Section présentant les points forts du restaurant */}
       <section className="about">
-        <p><strong>LIVRAISON GRATUITE</strong></p>
-        <p><strong>CUITES AU FEU DE BOIS</strong></p>
-        <p><strong>UNIQUE A MARSEILLE</strong></p>
+        <p><strong>LIVRAISON GRATUITE DANS MARSEILLE</strong></p>
+        <p><strong>CUITES AU FEU DE BOIS POUR UN GOUT EXEPTIONNEL</strong></p>
+        <p><strong>UNIQUE ET AUTHENTIQUE A MARSEILLE</strong></p>
       </section>
 
       {/* Séparateur entre les sections */}

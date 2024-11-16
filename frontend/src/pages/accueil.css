@@ -40,7 +40,7 @@ h1, h2, h3, h4, .main-title {
 }
 
 .banner-overlay {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
   width: auto;
   padding: 80px;
   text-align: center;
@@ -69,7 +69,7 @@ h1, h2, h3, h4, .main-title {
   transform: scale(1.05);
 }
 
-/* === Cartes des Pizzas === */
+/* === Menu - Cartes des Pizzas === */
 .pizza-cards {
   display: flex;
   gap: 20px;
@@ -249,5 +249,13 @@ h1, h2, h3, h4, .main-title {
 
   .contact-title {
     font-size: 2rem;
+  }
+
+  .banner-overlay {
+    padding: 40px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
   }
 }

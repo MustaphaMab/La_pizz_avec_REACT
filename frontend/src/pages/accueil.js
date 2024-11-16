@@ -1,109 +1,142 @@
-import React from 'react';
-import './accueil.css';
-import { Helmet } from 'react-helmet';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';  // Styles nécessaires pour AOS
+import './Accueil.css';  // Assurez-vous d'avoir un fichier CSS pour le style
 
-function Accueil() {
+const Accueil = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="accueil">
-      {/* SEO: Balises pour les moteurs de recherche */}
-      <Helmet>
-        <title>La Pizz'A Moos - Pizzas Authentiques à Marseille</title>
-        <meta name="description" content="Découvrez La Pizz'A Moos, votre pizzeria à Marseille avec des pizzas cuites au feu de bois, livraison gratuite et une ambiance conviviale." />
-        <meta property="og:title" content="La Pizz'A Moos - Pizzas Authentiques à Marseille" />
-        <meta property="og:description" content="Venez goûter nos pizzas vedettes cuites au feu de bois à Marseille. Livraison gratuite !" />
-        <meta property="og:image" content="/images/banniere.jpg" />
-        <meta property="og:url" content="https://www.la-pizza-moos.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+    <>
+      {/* Meta Tags pour le SEO */}
+      <head>
+        <meta name="keywords" content="pizzeria, pizza, Marseille, livraison gratuite, feu de bois, pizzas authentiques" />
+        <meta name="author" content="La Pizz'A Moos" />
+        <meta name="description" content="La Pizz'A Moos - Pizzeria à Marseille, livraison gratuite et pizzas cuites au feu de bois." />
+        <meta property="og:title" content="La Pizz'A Moos - Pizzeria à Marseille" />
+        <meta property="og:description" content="Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!" />
+        <meta property="og:image" content="/path/to/logo.jpg" />
+        <meta name="robots" content="index, follow" />
+      </head>
 
+      {/* Header avec le logo et la navigation */}
       <header>
-        {/* Bannière */}
-        <section className="banner" style={{ backgroundImage: "url('/images/banniere.jpg')" }}>
-          <div className="banner-overlay">
-            <h1 className="main-title">LA PIZZ'A MOOS</h1>
-            <h2>04 91 12 34 560</h2>
-          </div>
-        </section>
+        <nav>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <main>
-        {/* Section "À propos" */}
-        <section className="about">
-          <p><strong>LIVRAISON GRATUITE DANS MARSEILLE</strong></p>
-          <p><strong>CUITES AU FEU DE BOIS POUR UN GOÛT EXCEPTIONNEL</strong></p>
-          <p><strong>UNIQUE ET AUTHENTIQUE À MARSEILLE</strong></p>
-        </section>
+      {/* Section Bannière */}
+      <section className="banner" style={{ backgroundImage: 'url(/path/to/banner-image.jpg)' }}>
+        <div className="banner-overlay">
+          <h1 className="main-title" data-aos="fade-up">Bienvenue chez La Pizz'A Moos</h1>
+          <p className="cta" data-aos="fade-up" data-aos-delay="200">Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!</p>
+          <a href="/menu" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Voir notre Menu</a>
+        </div>
+      </section>
 
-        {/* Pizzas vedettes */}
-        <section className="featured-pizzas">
-          <h2>NOS PIZZAS VEDETTES</h2>
-          <div className="pizza-cards">
-            {[
-              { image: '/images/pizza1.jpg', title: 'Pizza Margherita', description: 'Tomate, mozzarella, basilic' },
-              { image: '/images/pizza2.jpg', title: 'Pizza Saumon', description: 'Crème, saumon, mozzarella' },
-              { image: '/images/pizza3.jpg', title: 'Pizza Végétarienne', description: 'Poivrons, champignons, olives' },
-            ].map((pizza, index) => (
-              <div className="pizza-card" key={index}>
-                <img src={pizza.image} alt={` ${pizza.title}`} loading="lazy" />
-                <h3>{pizza.title}</h3>
-                <p>{pizza.description}</p>
-              </div>
-            ))}
+      {/* Section Séparateur */}
+      <div className="section-divider" data-aos="fade-up"></div>
+
+      {/* Section À propos */}
+      <section className="about" data-aos="fade-up">
+        <h2>À propos de La Pizz'A Moos</h2>
+        <p>Notre pizzeria offre une expérience unique à Marseille. Toutes nos pizzas sont cuites au feu de bois pour un goût exceptionnel. Nous vous proposons une livraison gratuite dans toute la ville.</p>
+      </section>
+
+      {/* Section Menu */}
+      <section className="menu" data-aos="fade-up">
+        <h2>Nos Pizzas</h2>
+        <div className="pizza-cards">
+          <div className="pizza-card" data-aos="zoom-in">
+            <img src="/path/to/pizza1.jpg" alt="Pizza Margherita" />
+            <h3>Pizza Margherita</h3>
+            <p>Tomate, mozzarella, basilic frais</p>
           </div>
-        </section>
-
-        {/* Galerie */}
-        <section className="gallery">
-          <h2>CONVIVIALITÉ ET BONNE AMBIANCE !</h2>
-          <div className="gallery-grid">
-            {['/images/galerie1.jpg', '/images/galerie2.jpg', '/images/galerie3.jpg', '/images/galerie4.jpg'].map((img, idx) => (
-              <img src={img} alt={`Ambiance chaleureuse dans notre restaurant ${idx + 1}`} key={idx} loading="lazy" />
-            ))}
+          <div className="pizza-card" data-aos="zoom-in" data-aos-delay="200">
+            <img src="/path/to/pizza2.jpg" alt="Pizza Pepperoni" />
+            <h3>Pizza Pepperoni</h3>
+            <p>Tomate, mozzarella, pepperoni</p>
           </div>
-        </section>
-
-        {/* Témoignages */}
-        <section className="testimonials">
-          <h2>Ce que nos clients disent</h2>
-          <div className="testimonial-cards">
-            {[
-              { text: "“Les meilleures pizzas que j'ai jamais goûtées !”", author: 'Marie L.' },
-              { text: "“Une ambiance agréable et des pizzas de qualité.”", author: 'Julien P.' },
-              { text: "“Les saveurs sont incroyables, parfait pour une soirée entre amis.”", author: 'Sophie K.' },
-            ].map((testimonial, index) => (
-              <div className="testimonial-card" key={index}>
-                <p>{testimonial.text}</p>
-                <h4>{testimonial.author}</h4>
-              </div>
-            ))}
+          <div className="pizza-card" data-aos="zoom-in" data-aos-delay="400">
+            <img src="/path/to/pizza3.jpg" alt="Pizza Végétarienne" />
+            <h3>Pizza Végétarienne</h3>
+            <p>Tomate, mozzarella, légumes frais</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Équipe */}
-        <section className="team">
-          <h2>Rencontrez notre Équipe</h2>
-          <p>Notre équipe dédiée travaille avec passion pour vous offrir le meilleur service.</p>
-          <div className="team-members">
-            {[
-              { image: '/images/maitre_pizzaiolo.jpg', name: 'Chef Giovanni', role: 'Maître pizzaiolo avec 20 ans d\'expérience' },
-              { image: '/images/chef_salle.jpg', name: 'Lisa Martin', role: 'Responsable de salle' },
-              { image: '/images/serveur_restaurant.png', name: 'Paul Dupont', role: 'Livreur rapide et toujours souriant' },
-            ].map((member, index) => (
-              <div className="team-member" key={index}>
-                <img src={member.image} alt={` ${member.name}`} loading="lazy" />
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-              </div>
-            ))}
+      {/* Section Galerie */}
+      <section className="gallery" data-aos="fade-up">
+        <h2>Galerie</h2>
+        <div className="gallery-grid">
+          <img src="/path/to/gallery1.jpg" alt="Pizza 1" />
+          <img src="/path/to/gallery2.jpg" alt="Pizza 2" />
+          <img src="/path/to/gallery3.jpg" alt="Pizza 3" />
+          <img src="/path/to/gallery4.jpg" alt="Pizza 4" />
+        </div>
+      </section>
+
+      {/* Section Témoignages */}
+      <section className="testimonials" data-aos="fade-up">
+        <h2>Ce que nos clients disent</h2>
+        <div className="testimonial-cards">
+          <div className="testimonial-card" data-aos="zoom-in">
+            <p>"Les meilleures pizzas que j'ai jamais mangées ! La pâte est parfaite et la livraison rapide."</p>
+            <h4>— Marc D.</h4>
           </div>
-        </section>
-      </main>
+          <div className="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+            <p>"Un véritable délice. Une expérience culinaire unique à Marseille."</p>
+            <h4>— Sophie L.</h4>
+          </div>
+        </div>
+      </section>
 
+      {/* Section Équipe */}
+      <section className="team" data-aos="fade-up">
+        <h2>Notre Équipe</h2>
+        <div className="team-members">
+          <div className="team-member" data-aos="zoom-in">
+            <img src="/path/to/team1.jpg" alt="Chef John" />
+            <h3>Chef John</h3>
+            <p>Créateur des recettes de pizzas authentiques au feu de bois.</p>
+          </div>
+          <div className="team-member" data-aos="zoom-in" data-aos-delay="200">
+            <img src="/path/to/team2.jpg" alt="Maria" />
+            <h3>Maria</h3>
+            <p>Responsable de la gestion et de la satisfaction client.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Contact */}
+      <section className="contact-section">
+        <h2 className="contact-title">Contactez-nous</h2>
+        <p className="contact-description">Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter !</p>
+        <div className="contact-info">
+          <div className="contact-item">
+            <i className="contact-icon fas fa-phone"></i>
+            <p>(123) 456-7890</p>
+          </div>
+          <div className="contact-item">
+            <i className="contact-icon fas fa-envelope"></i>
+            <p>contact@lapizzamoos.com</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer>
-        <p>© 2024 La Pizz'A Moos - Tous droits réservés.</p>
+        <p>&copy; 2024 La Pizz'A Moos. Tous droits réservés.</p>
       </footer>
-    </div>
+    </>
   );
-}
+};
 
 export default Accueil;

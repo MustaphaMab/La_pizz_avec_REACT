@@ -21,23 +21,14 @@ const Accueil = () => {
         <meta name="robots" content="index, follow" />
       </head>
 
-      {/* Header avec le logo et la navigation */}
-      <header>
-        <nav>
-          <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+
 
       {/* Section Bannière */}
-      <section className="banner" style={{ backgroundImage: 'url(/path/to/banner-image.jpg)' }}>
+      <section className="banner" style={{ backgroundImage: 'url(/images/banniere.jpg)' }}>
         <div className="banner-overlay">
           <h1 className="main-title" data-aos="fade-up">Bienvenue chez La Pizz'A Moos</h1>
           <p className="cta" data-aos="fade-up" data-aos-delay="200">Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!</p>
-          <a href="/menu" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Voir notre Menu</a>
+          <a href="/menu.js" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Voir nos Pizzas</a>
         </div>
       </section>
 
@@ -107,8 +98,13 @@ const Accueil = () => {
             <h3>Chef John</h3>
             <p>Créateur des recettes de pizzas authentiques au feu de bois.</p>
           </div>
+          <div className="team-member" data-aos="zoom-in">
+            <img src="/path/to/team3.jpg" alt="serveur Giovanni" />
+            <h3>Giovanni </h3>
+            <p>Serveur au grand coeur.</p>
+          </div>
           <div className="team-member" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/path/to/team2.jpg" alt="Maria" />
+            <img src="/path/to/team2.jpg" alt="Responsable Maria" />
             <h3>Maria</h3>
             <p>Responsable de la gestion et de la satisfaction client.</p>
           </div>

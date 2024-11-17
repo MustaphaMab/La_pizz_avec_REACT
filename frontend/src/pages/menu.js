@@ -33,9 +33,9 @@ function Menu() {
         <>
             {/* SEO avec Helmet */}
             <Helmet>
-                <title>Notre Menu | La Pizza Moos</title>
+                <title>Notre Menu | Pizzeria La Pizza Moos</title>
                 <meta name="description" content="Découvrez notre menu de pizzas artisanales, préparées avec des ingrédients frais et de qualité." />
-                <meta property="og:title" content="Notre Menu | La Pizza Moos" />
+                <meta property="og:title" content="Notre Menu | Pizzeria La Pizza Moos" />
                 <meta property="og:description" content="Explorez notre sélection de pizzas artisanales. Commandez dès maintenant !" />
 
                 <meta property="og:url" content="https://www.la-pizza-moos.com/menu" />

@@ -55,7 +55,7 @@ function Contact() {
       <div className="map-container">
         {/* Intégration de la carte Google Maps pour afficher l'emplacement de la pizzeria */}
         <iframe
-          title="La Pizz' Location"
+          title="Pizzerria La Pizz' Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5810.240266556617!2d5.393326575423885!3d43.269858971122886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b8a778a71c19%3A0xf30ae56cc3f4dc1e!2sOrange%20V%C3%A9lodrome!5e0!3m2!1sfr!2sfr!4v1730838084026!5m2!1sfr!2sfr"
           width="100%"
           height="300px"

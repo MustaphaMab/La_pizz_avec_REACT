@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Styles nécessaires pour AOS
-import "./accueil.css"; // Assurez-vous d'avoir un fichier CSS pour le style
+import "./accueil.css";
 import { Link } from 'react-router-dom';
 
 const Accueil = () => {
@@ -37,11 +37,11 @@ const Accueil = () => {
       {/* Section Bannière */}
       <section
         className="banner"
-        style={{ backgroundImage: "url(/images/banniere.jpg)" }}
+        style={{ backgroundImage: "url(/images/banniere.webp)" }}
       >
         <div className="banner-overlay">
           <h1 className="main-title" data-aos="fade-up">
-            Bienvenue chez La Pizz'A Moos
+            Bienvenue à la pizzeria La Pizz'A Moos
           </h1>
           <p className="cta" data-aos="fade-up" data-aos-delay="200">
             Savourez nos pizzas authentiques cuites au feu de bois. Livraison
@@ -97,10 +97,10 @@ const Accueil = () => {
       <section className="gallery" data-aos="fade-up">
         <h2>Galerie</h2>
         <div className="gallery-grid">
-          <img src="/images/galerie1.jpg" alt="Pizza 1" />
-          <img src="/images/galerie2.jpg" alt="Pizza 2" />
-          <img src="/images/galerie3.jpg" alt="Pizza 3" />
-          <img src="/images/galerie4.jpg" alt="Pizza 4" />
+          <img src="/images/galerie1.webp" alt="Pizza 1" />
+          <img src="/images/galerie2.webp" alt="Pizza 2" />
+          <img src="/images/galerie3.webp" alt="Pizza 3" />
+          <img src="/images/galerie4.webp" alt="Pizza 4" />
         </div>
       </section>
 

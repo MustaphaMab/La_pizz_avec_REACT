@@ -134,17 +134,17 @@ const Accueil = () => {
         <h2>Notre Équipe</h2>
         <div className="team-members">
           <div className="team-member" data-aos="zoom-in">
-            <img src="/path/to/team1.jpg" alt="Chef John" />
+            <img src="/images/chef.jpg" alt="Chef John" />
             <h3>Chef John</h3>
             <p>Créateur des recettes de pizzas authentiques au feu de bois.</p>
           </div>
           <div className="team-member" data-aos="zoom-in">
-            <img src="/path/to/team3.jpg" alt="serveur Giovanni" />
+            <img src="/images/serveur.jpg" alt="serveur Giovanni" />
             <h3>Giovanni </h3>
             <p>Serveur au grand coeur.</p>
           </div>
           <div className="team-member" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/path/to/team2.jpg" alt="Responsable Maria" />
+            <img src="/images/responsable.jpg" alt="Responsable Maria" />
             <h3>Maria</h3>
             <p>Responsable de la gestion et de la satisfaction client.</p>
           </div>

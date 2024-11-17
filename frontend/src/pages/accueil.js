@@ -76,17 +76,17 @@ const Accueil = () => {
         <h2>Nos Pizzas</h2>
         <div className="pizza-cards">
           <div className="pizza-card" data-aos="zoom-in">
-            <img src="/path/to/pizza1.jpg" alt="Pizza Margherita" />
+            <img src="/images/margherita.jpg" alt="Pizza Margherita" />
             <h3>Pizza Margherita</h3>
             <p>Tomate, mozzarella, basilic frais</p>
           </div>
           <div className="pizza-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/path/to/pizza2.jpg" alt="Pizza Pepperoni" />
+            <img src="/images/pépéroni.jpg" alt="Pizza Pepperoni" />
             <h3>Pizza Pepperoni</h3>
             <p>Tomate, mozzarella, pepperoni</p>
           </div>
           <div className="pizza-card" data-aos="zoom-in" data-aos-delay="400">
-            <img src="/path/to/pizza3.jpg" alt="Pizza Végétarienne" />
+            <img src="/images/vegetarienne.jpg" alt="Pizza Végétarienne" />
             <h3>Pizza Végétarienne</h3>
             <p>Tomate, mozzarella, légumes frais</p>
           </div>
@@ -97,10 +97,10 @@ const Accueil = () => {
       <section className="gallery" data-aos="fade-up">
         <h2>Galerie</h2>
         <div className="gallery-grid">
-          <img src="/path/to/gallery1.jpg" alt="Pizza 1" />
-          <img src="/path/to/gallery2.jpg" alt="Pizza 2" />
-          <img src="/path/to/gallery3.jpg" alt="Pizza 3" />
-          <img src="/path/to/gallery4.jpg" alt="Pizza 4" />
+          <img src="/images/galerie1.jpg" alt="Pizza 1" />
+          <img src="/images/galerie2.jpg" alt="Pizza 2" />
+          <img src="/images/galerie3.jpg" alt="Pizza 3" />
+          <img src="/images/galerie4.jpg" alt="Pizza 4" />
         </div>
       </section>
 

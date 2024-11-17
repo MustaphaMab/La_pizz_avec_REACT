@@ -45,7 +45,7 @@ function Menu() {
                 {/* Bannière avec titre */}
                 <section className="menu-banner">
                     <div className="banner-overlay">
-                        <h1 className="menu-title">Notre Menu</h1>
+                        <h1 className="menu-title">Nos pizzas</h1>
                         <p className="menu-subtitle">Découvrez nos pizzas artisanales, préparées avec passion.</p>
                     </div>
                 </section>

@@ -73,7 +73,7 @@ const Accueil = () => {
 
       {/* Section Menu */}
       <section className="menu" data-aos="fade-up">
-        <h2>Nos Pizzas</h2>
+        <h2>Nos Pizzas du moment</h2>
         <div className="pizza-cards">
           <div className="pizza-card" data-aos="zoom-in">
             <img src="/images/margherita.jpg" alt="Pizza Margherita" />
@@ -161,7 +161,7 @@ const Accueil = () => {
         <div className="contact-info">
           <div className="contact-item">
             <i className="contact-icon fas fa-phone"></i>
-            <p>(123) 456-7890</p>
+            <p>04 91 12 34 560</p>
           </div>
           <div className="contact-item">
             <i className="contact-icon fas fa-envelope"></i>

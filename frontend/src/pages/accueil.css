@@ -20,7 +20,7 @@ h1, h3, h4, .main-title {
   color: #ffffff;
 }
 
-h2 {
+h2, h3, .main-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;

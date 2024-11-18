@@ -13,14 +13,14 @@ body {
   text-align: center;
 }
 
-h1, h3, h4, .main-title {
+h1, h2, h3, h4, .main-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
 }
 
-h2, h3, .main-title {
+.menu h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;

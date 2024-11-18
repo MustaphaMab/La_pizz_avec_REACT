@@ -15,20 +15,20 @@ const Accueil = () => {
       <head>
         <meta
           name="keywords"
-          content="pizzeria, pizza, Marseille, livraison gratuite, feu de bois, pizzas authentiques"
+          content="pizzeria, pizza, Marseille,Vitrolles, Paris, livraison gratuite, feu de bois, pizzas authentiques"
         />
         <meta name="author" content="La Pizz'A Moos" />
         <meta
           name="description"
-          content="La Pizz'A Moos - Pizzeria à Marseille, livraison gratuite et pizzas cuites au feu de bois."
+          content="La Pizz'A Moos - Pizzeria à Marseille, Paris et Vitrolleslivraison gratuite et pizzas cuites au feu de bois."
         />
         <meta
           property="og:title"
-          content="La Pizz'A Moos - Pizzeria à Marseille"
+          content="La Pizz'A Moos - Pizzeria à Paris, Vitrolles et Marseille"
         />
         <meta
           property="og:description"
-          content="Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Marseille!"
+          content="Savourez nos pizzas authentiques cuites au feu de bois. Livraison gratuite à Paris, Vitrolles et Marseille!"
         />
         <meta property="og:image" content="/path/to/logo.jpg" />
         <meta name="robots" content="index, follow" />
@@ -45,7 +45,7 @@ const Accueil = () => {
           </h1>
           <p className="cta" data-aos="fade-up" data-aos-delay="200">
             Savourez nos pizzas authentiques cuites au feu de bois. Livraison
-            gratuite à Marseille!
+            gratuite à Paris, Vitrolle et Marseille !
           </p>
           <Link
             to="/menu"

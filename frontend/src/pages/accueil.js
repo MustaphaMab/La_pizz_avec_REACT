@@ -76,17 +76,17 @@ const Accueil = () => {
         <h2>Nos Pizzas du moment</h2>
         <div className="pizza-cards">
           <div className="pizza-card" data-aos="zoom-in">
-            <img src="/images/margherita.jpg" alt="Pizza Margherita" />
+            <img src="/images/Margherita.jpg" alt="Pizza Margherita" />
             <h3>Pizza Margherita</h3>
             <p>Tomate, mozzarella, basilic frais</p>
           </div>
           <div className="pizza-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="/images/pépéroni.jpg" alt="Pizza Pepperoni" />
+            <img src="/images/Pepperoni.jpg" alt="Pizza Pepperoni" />
             <h3>Pizza Pepperoni</h3>
             <p>Tomate, mozzarella, pepperoni</p>
           </div>
           <div className="pizza-card" data-aos="zoom-in" data-aos-delay="400">
-            <img src="/images/vegetarienne.jpg" alt="Pizza Végétarienne" />
+            <img src="/images/Vegetarienne.jpg" alt="Pizza Végétarienne" />
             <h3>Pizza Végétarienne</h3>
             <p>Tomate, mozzarella, légumes frais</p>
           </div>
@@ -170,10 +170,7 @@ const Accueil = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2024 La Pizz'A Moos. Tous droits réservés.</p>
-      </footer>
+      
     </>
   );
 };

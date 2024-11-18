@@ -9,16 +9,23 @@ body {
   margin: 0;
   padding: 0;
   color: #ffffff;
-  background-color: #121212; /* Fond noir global */
+  background-color: #121212;
+  text-align: center;
 }
 
-h1, h2, h3, h4, .main-title {
+h1, h3, h4, .main-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
 }
 
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
 /* === Séparateurs === */
 .section-divider {
   width: 60%;
@@ -91,8 +98,8 @@ h1, h2, h3, h4, .main-title {
 }
 
 .pizza-card img {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 70%;
   border-radius: 8px;
   margin-bottom: 10px;
 }

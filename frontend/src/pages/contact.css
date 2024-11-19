@@ -1,7 +1,7 @@
 .contact-container {
   background-color: #121212;
-  color: #ffffff; 
-  padding: 20px;
+  color: #ffffff;
+  padding: 40px; 
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
@@ -10,28 +10,30 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   color: #f27222;
+  margin-bottom: 30px; 
 }
 
 .contact-description {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 30px; 
   color: #ffffff;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
-  color: #ffffff; 
+  gap: 20px; 
+  margin-bottom: 40px;
+  color: #ffffff;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px; 
   font-size: 1.1em;
-  color: #ffffff; 
+  color: #ffffff;
+  padding: 10px 0;
 }
 
 .contact-item a {
@@ -41,31 +43,35 @@ h1 {
 }
 
 .contact-item a:hover {
-  color: #e0e0e0; 
+  color: #e0e0e0;
 }
 
 .contact-icon {
-  color: #ffffff; 
-  font-size: 1.2em;
-  width: 20px;
+  color: #ffffff;
+  font-size: 1.4em; 
+  width: 30px;
   text-align: center;
 }
 
 .map-container {
   width: 100%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 40px;
+  padding: 10px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-  
-  @media (max-width: 600px) {
-    .contact-item {
-      flex-direction: column;
-      text-align: left;
-      gap: 5px;
-    }
+.map-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .contact-item {
+    flex-direction: column;
+    text-align: left;
+    gap: 10px; 
   }
-  
+}

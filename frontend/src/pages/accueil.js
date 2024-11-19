@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Styles nécessaires pour AOS
 import "./accueil.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Accueil = () => {
   useEffect(() => {
@@ -161,18 +161,14 @@ const Accueil = () => {
         <div className="contact-info">
           <div className="contact-item">
             <i className="contact-icon fas fa-phone"></i>
-            <p>04 00 34 56 78</p>
+            <a href="tel:+33400345678">04 00 34 56 78</a>
           </div>
           <div className="contact-item">
             <i className="contact-icon fas fa-envelope"></i>
-            <p>contact@lapizzamoos.com</p>
+            <a href="mailto:contact@lapizzamoos.com">contact@lapizzamoos.com</a>
           </div>
         </div>
-        <a href='tel:+33491123456'>04 00 34 56 78</a>
-<a href='mailto:contact@lapizzamoos.com'>contact@lapizzamoos.com</a>
       </section>
-
-      
     </>
   );
 };

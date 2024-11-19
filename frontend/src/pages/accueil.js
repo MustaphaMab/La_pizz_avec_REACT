@@ -161,13 +161,15 @@ const Accueil = () => {
         <div className="contact-info">
           <div className="contact-item">
             <i className="contact-icon fas fa-phone"></i>
-            <p>04 91 12 34 560</p>
+            <p>04 00 34 56 78</p>
           </div>
           <div className="contact-item">
             <i className="contact-icon fas fa-envelope"></i>
             <p>contact@lapizzamoos.com</p>
           </div>
         </div>
+        <a href='tel:+33491123456'>04 00 34 56 78</a>
+<a href='mailto:contact@lapizzamoos.com'>contact@lapizzamoos.com</a>
       </section>
 
       
